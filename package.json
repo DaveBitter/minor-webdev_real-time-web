@@ -1,0 +1,36 @@
+{
+  "name": "real-time-web",
+  "version": "1.0.0",
+  "description": "Dave Bitter | 500710907",
+   "engines": {
+    "node": "6.9.4",
+    "npm": "3.10.10"
+  },
+  "main": "server.js",
+  "scripts": {
+    "clean": "rm -rf ./public/js/build.js",
+    "watch": "watchify ./client/app.js -o ./public/js/build.js",
+    "build": "browserify ./client/app.js -o ./public/js/build.js",
+    "start": "nodemon -e js & npm run watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaveBitter/minor-webdev_real-time-web.git"
+  },
+  "author": "Dave Bitter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DaveBitter/minor-webdev_real-time-web/issues"
+  },
+  "homepage": "https://github.com/DaveBitter/minor-webdev_real-time-web#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "pug": "^2.0.0-beta11",
+    "socket.io": "^1.7.3"
+  },
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "nodemon": "^1.11.0",
+    "watchify": "^3.9.0"
+  }
+}
