@@ -11,7 +11,8 @@
     "clean": "rm -rf ./public/js/build.js",
     "watch": "watchify ./client/app.js -o ./public/js/build.js",
     "build": "browserify ./client/app.js -o ./public/js/build.js",
-    "start": "nodemon -e js & npm run watch"
+    "start": "nodemon -e js & npm run watch",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
