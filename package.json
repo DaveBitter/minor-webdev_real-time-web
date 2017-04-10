@@ -2,6 +2,10 @@
   "name": "real-time-web",
   "version": "1.0.0",
   "description": "Dave Bitter | 500710907",
+   "engines": {
+    "node": "6.9.4",
+    "npm": "3.10.10"
+  },
   "main": "server.js",
   "scripts": {
     "clean": "rm -rf ./public/js/build.js",
