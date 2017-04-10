@@ -21,7 +21,8 @@
   "homepage": "https://github.com/DaveBitter/minor-webdev_real-time-web#readme",
   "dependencies": {
     "express": "^4.15.2",
-    "pug": "^2.0.0-beta11"
+    "pug": "^2.0.0-beta11",
+    "socket.io": "^1.7.3"
   },
   "devDependencies": {
     "browserify": "^14.1.0",
