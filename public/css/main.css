@@ -47,3 +47,7 @@ form button {
 #messages {
 	margin-bottom: 40px
 }
+
+.text-right {
+	text-align: right;
+}
