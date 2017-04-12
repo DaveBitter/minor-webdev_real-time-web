@@ -6,15 +6,15 @@ $(function() {
 
 
 	$('form').submit(function() {
-		socket.emit('chat message', $('#m').val(), username);
-		$('#m').val('');
+		socket.emit('chat message', $('#message').val(), username);
+		$('#message').val('');
 		return false;
 	});
 	socket.on('chat message', function(msg, passedUsername) {
 		if (username == passedUsername) {
-			$('#messages').append($('<li>').addClass('text-right').text(passedUsername + ': ' + msg));
+			$('#messages').append($('<li>').attr('data-sender', 'me').text(passedUsername + ': ' + msg));
 		} else {
-			$('#messages').append($('<li>').text(passedUsername + ': ' + msg));
+			$('#messages').append($('<li>').attr('data-sender', 'other').text(passedUsername + ': ' + msg));
 		}
 		window.scrollTo(0, document.body.scrollHeight);
 	});
