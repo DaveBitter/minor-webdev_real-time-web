@@ -11,7 +11,6 @@ $(function() {
 		return false;
 	});
 	socket.on('chat message', function(msg, passedUsername) {
-		console.log(username, passedUsername)
 		if (username == passedUsername) {
 			$('#messages').append($('<li>').addClass('text-right').text(passedUsername + ': ' + msg));
 		} else {
