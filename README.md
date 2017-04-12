@@ -37,7 +37,7 @@ Clean clientside build.js file
     npm run clean
 
 ## Live demo
-[Socker.io chat app](https://minor-webdev-real-time-web.herokuapp.com/)
+[Socket.io chat app](https://minor-webdev-real-time-web.herokuapp.com/)
 
 ## License
 [MIT](LICENSE.md) © [Dave Bitter](https://github.com/DaveBitter/)
