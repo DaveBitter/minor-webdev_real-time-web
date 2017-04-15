@@ -1,5 +1,5 @@
 # Minor WebDev | Real-time Web
-Dave Bitter | 500710907
+Dave Bitter
 ![app hero](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/hero.jpg)
 
     V 1.0.1
