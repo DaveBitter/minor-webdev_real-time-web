@@ -4,7 +4,8 @@ Dave Bitter | 500710907
 
     V 1.0.1
 
-    Note: Yes this is another chat app. I used the techniques for this app in an other app that might interest you more. The other app is an weather streaming app and can be found [here](https://github.com/DaveBitter/weather_stream)
+## Note
+Yes this is another chat app. I used the techniques for this app in an other app that might interest you more. The other app is an weather streaming app and can be found [here](https://github.com/DaveBitter/weather_stream)
 
 ## General
 This repository holds the seperate exercises for the course 'Real-time Web', part of the minor "Webdevelopment" at the [HvA](http://www.hva.nl/)
