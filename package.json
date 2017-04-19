@@ -2,7 +2,7 @@
   "name": "real-time-web",
   "version": "1.0.0",
   "description": "Dave Bitter | 500710907",
-   "engines": {
+  "engines": {
     "node": "6.9.4",
     "npm": "3.10.10"
   },
@@ -25,11 +25,13 @@
   },
   "homepage": "https://github.com/DaveBitter/minor-webdev_real-time-web#readme",
   "dependencies": {
-    "express": "^4.15.2",
-    "pug": "^2.0.0-beta11",
-    "socket.io": "^1.7.3",
     "browserify": "^14.1.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
     "nodemon": "^1.11.0",
+    "pug": "^2.0.0-beta11",
+    "request": "^2.81.0",
+    "socket.io": "^1.7.3",
     "watchify": "^3.9.0"
   },
   "devDependencies": {
