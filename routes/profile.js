@@ -2,14 +2,16 @@ const express = require('express')
 const router = express.Router()
 const request = require('request')
 
+const client_id = process.env.CLIENTID
+const client_secret = process.env.CLIENTSECRET
+const redirect_uri = process.env.REDIRECTURI
+const access_token = process.env.ACCESSTOKEN
+
+let code = null;
 
 router.get('/', (req, res) => {
-	const client_id = process.env.CLIENTID
-	const client_secret = process.env.CLIENTSECRET
-	const redirect_uri = process.env.REDIRECTURI
-
+	code = req.query.code
 	const url = "https://api.instagram.com/oauth/access_token";
-	const code = req.query.code
 	const options = {
 		url: url,
 		method: "POST",
@@ -34,4 +36,16 @@ router.get('/', (req, res) => {
 	})
 })
 
+router.get('/hashtag', (req, res) => {
+	const url = 'https://api.instagram.com/v1/users/self/media/recent/?count=10&access_token='
+
+	request(url + access_token, function(err, response, body) {
+		body = JSON.parse(body)
+		const media = body.data
+
+		res.render('templates/hashtag', {media})
+	})
+})
+
 module.exports = router
+

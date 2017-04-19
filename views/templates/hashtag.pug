@@ -1,0 +1,11 @@
+extends ../layout.pug
+
+block content
+	section.card
+		h1 Your Latest hashtags
+		each item in media
+			article
+				img(src=item.images.thumbnail.url)
+				p
+					each tag in item.tags
+						span="#" + tag + " "
