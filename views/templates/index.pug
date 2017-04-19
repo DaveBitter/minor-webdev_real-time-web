@@ -1,4 +1,7 @@
 extends ../layout.pug
 
 block content
-	a(href='/login'): button Login
+	section.card
+		h1 We need you information from Instagram in order for this app to work.
+		p Please grant the permission after clicking the link below. You will be redirected back to our site shortly after
+		a(href='/login'): button.btn--primary Login at Instagram
