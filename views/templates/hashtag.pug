@@ -1,11 +1,18 @@
 extends ../layout.pug
 
 block content
-	section.card
-		h1 Your Latest hashtags
-		each item in media
-			article
-				img(src=item.images.thumbnail.url)
-				p
-					each tag in item.tags
-						span="#" + tag + " "
+	.row
+		.col-md-8
+			section.card
+				h2 Your Latest Posts
+				each item in media
+					article
+						img(src=item.images.thumbnail.url)
+						p
+							each tag in item.tags
+								span="#" + tag + " "
+		.col-md-4
+			section.card
+				h2 Your Latest Hashtags
+				each tag in tags
+					li: a(href='/tag/' + tag)="#"+tag

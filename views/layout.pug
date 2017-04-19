@@ -1,9 +1,11 @@
 html
 	head
 		link(href='/css/main.css', rel='stylesheet', type='text/css')
+		link(href='/css/boostrap-grid.css', rel='stylesheet', type='text/css')
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700" rel="stylesheet")
 	body
-		block content
+		.container
+			block content
 		script(src="https://cdn.socket.io/socket.io-1.2.0.js", type="text/javascript")
 		script(src="/js/build.js", type="text/javascript")

@@ -16,16 +16,16 @@ body {
 h1 {
 	color: #0288D1;
 }
+
 h1, h2, h3, h4, h5, h6 {
 	margin: .2em 0;
 }
+
 section.card {
 	padding: 1.5em;
 	background-color: #ffffff;
 	border-radius: .2em;
 	box-shadow: 0 .4em .8em 0 rgba(0, 0, 0, 0.2);
-	max-width: 25em;
-	margin: 5em auto;
 }
 
 button {
@@ -49,4 +49,9 @@ button {
 a {
 	text-decoration: none;
 	color: #FF5252;
+}
+
+ul {
+	padding-left: 0;
+	list-style: none;
 }

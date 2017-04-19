@@ -1,7 +1,9 @@
 extends ../layout.pug
 
 block content
-	section.card
-		h1 We need you information from Instagram in order for this app to work.
-		p Please grant the permission after clicking the link below. You will be redirected back to our site shortly after
-		a(href='/login'): button.btn--primary Login at Instagram
+	.row
+		.col-md-6.col-md-offset-3
+			section.card
+				h1 We need you information from Instagram in order for this app to work.
+				p Please grant the permission after clicking the link below. You will be redirected back to our site shortly after
+				a(href='/login'): button.btn--primary Login at Instagram

@@ -43,43 +43,33 @@ router.get('/hashtag', (req, res) => {
 		body = JSON.parse(body)
 		const media = body.data
 
-		getTagCount(media)
+		const tags = getTags(media)
 
 		res.render('templates/hashtag', {
-			media
+			media,
+			tags
 		})
 	})
 })
 
-const getTagCount = (media) => {
+const getTags = (media) => {
 	const tags = []
 	media.forEach((item) => {
 		item.tags.forEach((tag) => {
 			tags.push(tag)
 		})
 	})
-	const tagCount = occurence(tags)
-	sortByOccurence(tagCount)
+	return unique(tags)
 
 }
 
-const occurence = (arr) => {
-	const obj = {};
-
-	arr.forEach((item) => {
-		if (obj[item]) {
-			obj[item]++;
-		} else {
-			obj[item] = 1;
-		}
-	})
-
-	return obj
-}
-
-const sortByOccurence = (obj) => {
-	console.log(obj)
+const unique = (arr) => {
+	const seen = {};
+	return arr.filter(function(item) {
+		return seen.hasOwnProperty(item) ? false : (seen[item] = true);
+	});
 
 }
+
 
 module.exports = router
