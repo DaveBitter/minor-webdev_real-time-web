@@ -9,13 +9,7 @@ const path = require('path')
 const indexRouter = require('./routes/index.js')
 
 io.on('connection', function(socket){
-  socket.on('chat message', function(msg, username){
-    io.emit('chat message', msg, username)
-  });
-
-  socket.on('new user', function(username) {
-  	io.emit('new user', username)
-  })
+ console.log("client connected!", socket.id)
 });
 
 app

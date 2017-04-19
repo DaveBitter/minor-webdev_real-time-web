@@ -4,9 +4,6 @@ Dave Bitter
 
     V 1.0.1
 
-## Note
-Yes this is another chat app. I used the techniques for this app in an other app that might interest you more. The other app is a weather streaming app and can be found [here](https://github.com/DaveBitter/weather_stream)
-
 ## General
 This repository holds the seperate exercises for the course 'Real-time Web', part of the minor "Webdevelopment" at the [HvA](http://www.hva.nl/)
 
@@ -39,8 +36,8 @@ Clean clientside build.js file
 
     npm run clean
 
-## Live demo
-[Socket.io chat app](https://minor-webdev-real-time-web.herokuapp.com/)
+### Credits
+* [Spotify Api Tutorial](https://developer.spotify.com/web-api/tutorial/)
 
 ## License
 [MIT](LICENSE.md) © [Dave Bitter](https://github.com/DaveBitter/)
