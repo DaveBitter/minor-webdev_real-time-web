@@ -37,6 +37,14 @@ router.get('/', (req, res) => {
 })
 
 router.get('/hashtag', (req, res) => {
+	const io = req.app.locals.settings.io
+	io.on('connection', function(socket) {
+		socket.on('new tag', function(tag) {
+			io.emit('new tagstream', tag)
+		});
+	});
+
+
 	const url = 'https://api.instagram.com/v1/users/self/media/recent/?count=10&access_token='
 
 	request(url + access_token, function(err, response, body) {

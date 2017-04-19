@@ -1,18 +1,29 @@
 extends ../layout.pug
 
+
 block content
-	.row
-		.col-md-8
-			section.card
-				h2 Your Latest Posts
-				each item in media
-					article
-						img(src=item.images.thumbnail.url)
-						p
-							each tag in item.tags
-								span="#" + tag + " "
-		.col-md-4
-			section.card
-				h2 Your Latest Hashtags
-				each tag in tags
-					li: a(href='/tag/' + tag)="#"+tag
+	- var livetag = "#canon"
+	.container
+		.row
+			.col-sm-4
+				section.card
+					h2 Your Latest Posts
+					each item in media
+						article
+							img(src=item.images.thumbnail.url)
+							p
+								each tag in item.tags
+									span="#" + tag + " "
+			.col-sm-4
+				section.card
+					h2 Your Latest Hashtags
+					ul#taglist
+						each tag in tags
+							li="#"+tag
+			.col-sm-4
+				section.card
+					h2 Live Feed for 
+						span#feedtag=livetag
+
+	script(src="https://cdn.socket.io/socket.io-1.2.0.js", type="text/javascript")
+	script(src="/js/build.js", type="text/javascript")

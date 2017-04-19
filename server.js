@@ -13,9 +13,9 @@ const indexRouter = require('./routes/index.js')
 const profileRouter = require('./routes/profile.js')
 
 
-io.on('connection', function(socket) {
-	console.log("client connected!", socket.id)
-});
+// io.on('connection', function(socket) {
+// 	console.log("client connected!", socket.id)
+// });
 
 const client_id = process.env.CLIENTID
 const client_secret = process.env.CLIENTSECRET
@@ -31,6 +31,7 @@ app
 		}
 	}))
 	.set('view engine', 'pug')
+	.set("io", io)
 	.use(express.static('public'))
 	.use('/', indexRouter)
 	.use('/profile', profileRouter)

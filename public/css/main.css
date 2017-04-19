@@ -49,9 +49,15 @@ button {
 a {
 	text-decoration: none;
 	color: #FF5252;
+	cursor: pointer;
 }
 
 ul {
 	padding-left: 0;
 	list-style: none;
+}
+
+#taglist>li {
+	cursor: pointer;
+	color: #FF5252;
 }
