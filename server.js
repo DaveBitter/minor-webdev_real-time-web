@@ -9,6 +9,7 @@ const path = require('path')
 
 
 const indexRouter = require('./routes/index.js')
+const oathRouter = require('./routes/oath.js')
 
 io.on('connection', function(socket) {
 	console.log("client connected!", socket.id)
@@ -22,30 +23,10 @@ app
 	.set('view engine', 'pug')
 	.use(express.static('public'))
 	.use('/', indexRouter)
+	.use('/oath', oathRouter)
 
 app.get('/login', function(req, res) {
 	res.redirect('https://api.instagram.com/oauth/authorize/?client_id=' + client_id + '&redirect_uri=' + redirect_uri + '&response_type=code')
-})
-
-app.get('/oath', function(req, res) {
-	var url = "https://api.instagram.com/oauth/access_token";
-	var code = req.query.code
-	var options = {
-		url: url,
-		method: "POST",
-		form: {
-			client_id: client_id,
-			client_secret: client_secret,
-			grant_type: 'authorization_code',
-			redirect_uri: redirect_uri,
-			code: code
-		},
-		json: true
-	}
-
-	request(options, function(err, res, body) {
-		console.log(body);
-	})
 })
 
 http.listen(port, function() {
