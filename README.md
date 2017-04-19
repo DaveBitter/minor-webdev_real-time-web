@@ -1,5 +1,4 @@
 # Minor WebDev | Real-time Web
-<<<<<<< 020ceb9af152c49c07591bb07c3cf55fbf702657
 Dave Bitter
 ![app hero](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/hero.jpg)
 
@@ -7,15 +6,6 @@ Dave Bitter
 
 ## Note
 Yes this is another chat app. I used the techniques for this app in an other app that might interest you more. The other app is a weather streaming app and can be found [here](https://github.com/DaveBitter/weather_stream)
-=======
-Dave Bitter | 500710907
-![app hero](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/hero.jpg)
-
-    V 1.0.1
->>>>>>> added screenshot to readme
-
-## Note
-Yes this is another chat app. I used the techniques for this app in an other app that might interest you more. The other app is an weather streaming app and can be found [here](https://github.com/DaveBitter/weather_stream)
 
 ## General
 This repository holds the seperate exercises for the course 'Real-time Web', part of the minor "Webdevelopment" at the [HvA](http://www.hva.nl/)
@@ -54,4 +44,3 @@ Clean clientside build.js file
 
 ## License
 [MIT](LICENSE.md) © [Dave Bitter](https://github.com/DaveBitter/)
-
