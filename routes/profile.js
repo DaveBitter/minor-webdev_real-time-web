@@ -40,7 +40,17 @@ router.get('/hashtag', (req, res) => {
 	const io = req.app.locals.settings.io
 	io.on('connection', function(socket) {
 		socket.on('new tag', function(tag) {
-			io.emit('new tagstream', tag)
+			tag = tag.replace('#', '')
+
+			const url = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?count=10&access_token='
+
+			request(url + access_token, function(err, response, body) {
+				body = JSON.parse(body)
+				const tagMedia = body.data
+
+				io.emit('new tagstream', tag, tagMedia)
+
+			})
 		});
 	});
 
@@ -81,3 +91,5 @@ const unique = (arr) => {
 
 
 module.exports = router
+
+// https://api.instagram.com/v1/tags/{tag-name}/media/recent?access_token=ACCESS-TOKEN

@@ -2,7 +2,8 @@
 (function() {
 	var elements = {
 		taglist: document.getElementById('taglist').childNodes,
-		feedtag: document.getElementById('feedtag')
+		feedtag: document.getElementById('feedtag'),
+		feed: document.getElementById('feed')
 	}
 
 	var socket = io();
@@ -15,8 +16,21 @@
 		})
 	})
 
-	socket.on('new tagstream', function(tag) {
-		elements.feedtag.innerHTML = tag
+	socket.on('new tagstream', function(tag, tagMedia) {
+		var listElements = ""
+		tagMedia.forEach(function(item) {
+			listElements += '<img src="' + item.images.thumbnail.url + '"/">'
+			var tags = "<p>"
+			item.tags.forEach(function(tag) {
+				tags += "<span>#" + tag + ' </span>'
+			})
+			tags += "</p>"
+			listElements += tags
+		})
+
+
+		elements.feed.innerHTML = listElements
+		elements.feedtag.innerHTML = "#" + tag
 	})
 
 	function sendTag(tag) {
