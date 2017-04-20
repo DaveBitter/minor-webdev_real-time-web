@@ -38,23 +38,25 @@ router.get('/', (req, res) => {
 
 router.get('/hashtag', (req, res) => {
 	const io = req.app.locals.settings.io
+	let queryTag = "#canon"
 	io.on('connection', function(socket) {
 		socket.on('new tag', function(tag) {
+			queryTag = tag
+		});
 			setInterval(function() {
 
-				tag = tag.replace('#', '')
+				queryTag = queryTag.replace('#', '')
 
-				const url = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?count=10&access_token='
+				const url = 'https://api.instagram.com/v1/tags/' + queryTag + '/media/recent?count=10&access_token='
 
 				request(url + access_token, function(err, response, body) {
 					body = JSON.parse(body)
 					const tagMedia = body.data
 
-					io.emit('new tagstream', tag, tagMedia)
+					io.emit('new tagstream', queryTag, tagMedia)
 
 				})
 			}, 5000);
-		});
 	});
 
 
