@@ -45,19 +45,9 @@ router.get('/hashtag', (req, res) => {
 		socket.on('new tag', function(tag) {
 			queryTag = tag
 		});
+		tagQueryEmit(io, queryTag)
 		setInterval(function() {
-
-			queryTag = queryTag.replace('#', '')
-
-			const url = 'https://api.instagram.com/v1/tags/' + queryTag + '/media/recent?count=10&access_token='
-
-			request(url + access_token, function(err, response, body) {
-				body = JSON.parse(body)
-				const tagMedia = body.data
-
-				io.emit('new tagstream', queryTag, tagMedia)
-
-			})
+			tagQueryEmit(io, queryTag)
 		}, 5000);
 	});
 
@@ -94,6 +84,21 @@ const unique = (arr) => {
 		return seen.hasOwnProperty(item) ? false : (seen[item] = true);
 	});
 
+}
+
+
+const tagQueryEmit = (io, queryTag) => {
+	queryTag = queryTag.replace('#', '')
+
+	const tagUrl = 'https://api.instagram.com/v1/tags/' + queryTag + '/media/recent?count=10&access_token='
+
+	request(tagUrl + access_token, function(err, response, body) {
+		body = JSON.parse(body)
+		const tagMedia = body.data
+
+		io.emit('new tagstream', queryTag, tagMedia)
+
+	})
 }
 
 
