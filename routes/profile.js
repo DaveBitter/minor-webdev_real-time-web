@@ -5,11 +5,12 @@ const request = require('request')
 const client_id = process.env.CLIENTID
 const client_secret = process.env.CLIENTSECRET
 const redirect_uri = process.env.REDIRECTURI
-const access_token = process.env.ACCESSTOKEN
 
 let code = null;
+let access_token = null;
 
 router.get('/', (req, res) => {
+	// Incoming from redirect from Instagram oAuth
 	code = req.query.code
 	const url = "https://api.instagram.com/oauth/access_token";
 	const options = {
@@ -29,6 +30,7 @@ router.get('/', (req, res) => {
 		if (body.code == 400) {
 			res.redirect('/')
 		}
+		access_token = body.access_token
 		const user = body.user
 		res.render('templates/profile', {
 			user
@@ -43,20 +45,20 @@ router.get('/hashtag', (req, res) => {
 		socket.on('new tag', function(tag) {
 			queryTag = tag
 		});
-			setInterval(function() {
+		setInterval(function() {
 
-				queryTag = queryTag.replace('#', '')
+			queryTag = queryTag.replace('#', '')
 
-				const url = 'https://api.instagram.com/v1/tags/' + queryTag + '/media/recent?count=10&access_token='
+			const url = 'https://api.instagram.com/v1/tags/' + queryTag + '/media/recent?count=10&access_token='
 
-				request(url + access_token, function(err, response, body) {
-					body = JSON.parse(body)
-					const tagMedia = body.data
+			request(url + access_token, function(err, response, body) {
+				body = JSON.parse(body)
+				const tagMedia = body.data
 
-					io.emit('new tagstream', queryTag, tagMedia)
+				io.emit('new tagstream', queryTag, tagMedia)
 
-				})
-			}, 5000);
+			})
+		}, 5000);
 	});
 
 
