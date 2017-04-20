@@ -20,6 +20,7 @@
 		var listElements = ""
 		tagMedia.forEach(function(item) {
 			listElements += '<img src="' + item.images.thumbnail.url + '"/">'
+			listElements += '<p><b>' + item.user.username + '</b></p>'
 			var tags = "<p>"
 			item.tags.forEach(function(tag) {
 				tags += "<span>#" + tag + ' </span>'
