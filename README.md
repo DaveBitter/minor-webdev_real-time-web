@@ -2,7 +2,7 @@
 Dave Bitter 
 ![app hero](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/hero.jpg) 
  
-    V 1.0.1 
+    V 1.0.2
  
 ## General 
 This repository holds the separate exercises for the course 'Real-time Web', part of the minor "Webdevelopment" at the [HvA](http://www.hva.nl/) 
