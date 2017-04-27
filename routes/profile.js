@@ -9,6 +9,8 @@ const redirect_uri = process.env.REDIRECTURI
 let code = null;
 let access_token = null;
 
+let sockets = []
+
 router.get('/', (req, res) => {
 	// Incoming from redirect from Instagram oAuth
 	code = req.query.code
@@ -42,13 +44,22 @@ router.get('/hashtag', (req, res) => {
 	const io = req.app.locals.settings.io
 	let queryTag = "#canon"
 	io.on('connection', function(socket) {
+		sockets.push({id:socket.id, tag:"#canon"})
 		socket.on('new tag', function(tag) {
 			queryTag = tag
 		});
 		tagQueryEmit(io, queryTag)
 		setInterval(function() {
+			console.log(sockets)
 			tagQueryEmit(io, queryTag)
 		}, 5000);
+
+		socket.on('disconnect', function() {
+      console.log('Got disconnect!');
+
+      let i = sockets.indexOf(socket);
+      sockets.splice(i, 1);
+   });
 	});
 
 
