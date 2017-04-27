@@ -44,22 +44,32 @@ router.get('/hashtag', (req, res) => {
 	const io = req.app.locals.settings.io
 	let queryTag = "#canon"
 	io.on('connection', function(socket) {
-		sockets.push({id:socket.id, tag:"#canon"})
+		sockets.push({
+			id: socket.id,
+			tag: "#canon"
+		})
 		socket.on('new tag', function(tag) {
+			sockets.map((sckt) => {
+				if (sckt.id == socket.id) {
+					sckt.tag = tag
+				}
+			})
 			queryTag = tag
 		});
 		tagQueryEmit(io, queryTag)
-		setInterval(function() {
-			console.log(sockets)
-			tagQueryEmit(io, queryTag)
-		}, 5000);
+
+		sockets.forEach((sckt) => {
+			setInterval(function() {
+				tagQueryEmit(io, sckt)
+			}, 5000);
+		})
 
 		socket.on('disconnect', function() {
-      console.log('Got disconnect!');
+			console.log('Got disconnect!');
 
-      let i = sockets.indexOf(socket);
-      sockets.splice(i, 1);
-   });
+			let i = sockets.indexOf(socket);
+			sockets.splice(i, 1);
+		});
 	});
 
 
@@ -98,7 +108,7 @@ const unique = (arr) => {
 }
 
 
-const tagQueryEmit = (io, queryTag) => {
+const tagQueryEmit = (io, sckt) => {
 	queryTag = queryTag.replace('#', '')
 
 	const tagUrl = 'https://api.instagram.com/v1/tags/' + queryTag + '/media/recent?count=10&access_token='
@@ -107,7 +117,7 @@ const tagQueryEmit = (io, queryTag) => {
 		body = JSON.parse(body)
 		const tagMedia = body.data
 
-		io.emit('new tagstream', queryTag, tagMedia)
+		io.sockets.socket(sckt.id).emit('new tagstream', queryTag, tagMedia);
 
 	})
 }
