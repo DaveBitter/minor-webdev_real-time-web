@@ -9,7 +9,7 @@ const redirect_uri = process.env.REDIRECTURI
 let code = null;
 let access_token = null;
 
-let sockets = []
+let clients = []
 
 router.get('/', (req, res) => {
 	// Incoming from redirect from Instagram oAuth
@@ -43,31 +43,38 @@ router.get('/', (req, res) => {
 router.get('/hashtag', (req, res) => {
 	const io = req.app.locals.settings.io
 	io.on('connection', function(socket) {
-		
-		sockets.push({
+		if (clients.filter(client => client.id == socket.id).length > 0) {
+			return
+		}
+
+		clients.push({
 			id: socket.id,
 			tag: "#canon"
 		})
 
+		console.info('Client (' + socket.id + ') connected!')
+		console.info('Total of connected clients: ' + clients.length)
+		
 		socket.on('new tag', function(tag) {
-			sockets.map((sckt) => {
-				if (sckt.id == socket.id) {
-					sckt.tag = tag
+			clients.map((client) => {
+				if (client.id == socket.id) {
+					client.tag = tag
 				}
 			})
 		});
 
 		socket.on('disconnect', function() {
-			console.log('Got disconnect!');
-
-			let i = sockets.indexOf(socket);
-			sockets.splice(i, 1);
+			let i = clients.indexOf(socket);
+			clients.splice(i, 1);
+			
+			console.info('Client (' + socket.id + ') disconnected!')
+			console.info('Total of connected clients: ' + clients.length)
 		});
 	});
 
 	setInterval(function() {
-		sockets.forEach((sckt) => {
-			tagQueryEmit(io, sckt)
+		clients.forEach((client) => {
+			tagQueryEmit(io, client)
 		})
 	}, 5000);
 
@@ -107,8 +114,8 @@ const unique = (arr) => {
 }
 
 
-const tagQueryEmit = (io, sckt) => {
-	const queryTag = sckt.tag.replace('#', '')
+const tagQueryEmit = (io, client) => {
+	const queryTag = client.tag.replace('#', '')
 
 	const tagUrl = 'https://api.instagram.com/v1/tags/' + queryTag + '/media/recent?count=10&access_token='
 
@@ -116,7 +123,7 @@ const tagQueryEmit = (io, sckt) => {
 		body = JSON.parse(body)
 		const tagMedia = body.data
 
-		io.to(sckt.id).emit('new tagstream', queryTag, tagMedia);
+		io.to(client.id).emit('new tagstream', queryTag, tagMedia);
 
 	})
 }
