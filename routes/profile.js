@@ -12,7 +12,7 @@ let access_token = null;
 let clients = []
 
 router.get('/', (req, res) => {
-	// Incoming from redirect from Instagram oAuth
+	// incoming from redirect from Instagram oAuth
 	code = req.query.code
 	const url = "https://api.instagram.com/oauth/access_token";
 	const options = {
@@ -43,19 +43,27 @@ router.get('/', (req, res) => {
 router.get('/hashtag', (req, res) => {
 	const io = req.app.locals.settings.io
 	io.on('connection', function(socket) {
+		// check if client is already in clients array
+		// prevents duplicates
 		if (clients.filter(client => client.id == socket.id).length > 0) {
 			return
 		}
 
+		// add client to array of known clients 
+		// give inital tag
+		// TODO: make the initial tag based on random tag of client
 		clients.push({
 			id: socket.id,
 			tag: "#canon"
 		})
 
+		// showing what's going on
 		console.info('Client (' + socket.id + ') connected!')
 		console.info('Total of connected clients: ' + clients.length)
 		
+		// event where user clicks on a new hashtag
 		socket.on('new tag', function(tag) {
+			// update tag in clients array for client
 			clients.map((client) => {
 				if (client.id == socket.id) {
 					client.tag = tag
@@ -64,27 +72,31 @@ router.get('/hashtag', (req, res) => {
 		});
 
 		socket.on('disconnect', function() {
+			// remove client from array of know clients
 			let i = clients.indexOf(socket);
 			clients.splice(i, 1);
-			
+
+			// showing what's going on
 			console.info('Client (' + socket.id + ') disconnected!')
 			console.info('Total of connected clients: ' + clients.length)
 		});
 	});
 
+	// polling of media with the selected tag every X amount of seconds for each client seperatly
 	setInterval(function() {
 		clients.forEach((client) => {
 			tagQueryEmit(io, client)
 		})
 	}, 5000);
 
-
+	// Get the last ten posts of client
 	const url = 'https://api.instagram.com/v1/users/self/media/recent/?count=10&access_token='
 
 	request(url + access_token, function(err, response, body) {
 		body = JSON.parse(body)
 		const media = body.data
 
+		// get al list of hashtags used in the last ten posts
 		const tags = getTags(media)
 
 		res.render('templates/hashtag', {
@@ -95,17 +107,21 @@ router.get('/hashtag', (req, res) => {
 })
 
 const getTags = (media) => {
+	// get al list of hashtags used in the last ten posts
 	const tags = []
 	media.forEach((item) => {
 		item.tags.forEach((tag) => {
 			tags.push(tag)
 		})
 	})
+
+	// remove duplicate hashtags
 	return unique(tags)
 
 }
 
 const unique = (arr) => {
+	// remove duplicates in array
 	const seen = {};
 	return arr.filter(function(item) {
 		return seen.hasOwnProperty(item) ? false : (seen[item] = true);
@@ -115,14 +131,18 @@ const unique = (arr) => {
 
 
 const tagQueryEmit = (io, client) => {
+	// getting rid of '#' symbol
 	const queryTag = client.tag.replace('#', '')
 
+	// get al list of the latest ten posts that used the selected hashtag
 	const tagUrl = 'https://api.instagram.com/v1/tags/' + queryTag + '/media/recent?count=10&access_token='
 
+	// query on hashtag
 	request(tagUrl + access_token, function(err, response, body) {
 		body = JSON.parse(body)
 		const tagMedia = body.data
 
+		// emmiting media to client
 		io.to(client.id).emit('new tagstream', queryTag, tagMedia);
 
 	})
