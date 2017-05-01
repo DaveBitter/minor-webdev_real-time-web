@@ -14,24 +14,24 @@ I highly encourage adding issues to this repo in the case of finding one. I'm al
 
 ## Table Of Contents
 * [Features ](#features)
-* [Emmited Socket Events](#emitted-socket-events)
+* [Emitted Socket Events](#emitted-socket-events)
 * [Live Demo ](#live-demo)
 * [Getting started ](#getting-started)
 * [License ](#license)
 
 ## Features 
-* [Instagram oAuth authentication ](#instagram-oauth-authentication)
+* [Instagram oAuth authentication ](#Instagram-oAuth-authentication)
 * [Show user's latest post and all the used hashtags](#show-users-latest-post-and-all-the-used-hashtags)
 * [Open stream with post with the hashtag a user selects through Socket.io ](#open-stream-with-post-with-the-hashtag-a-user-selects-through-socketio)
 * [Most clicked hashtags, only sent if new information (MongoDB)](#most-clicked-hashtags-only-sent-if-new-information-mongodb)
-*service-worker-and-progressive-webapp)
+*service-worker-and-progressive-web-app)
  
 ### Instagram oAuth authentication
-![oauth step 1](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oauth_0_hero.jpg)
-![oauth step 2](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oauth_1_hero.jpg) 
-![oauth step 3](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oauth_2_hero.jpg) 
+![oAuth step 1](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oauth_0_hero.jpg)
+![oAuth step 2](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oauth_1_hero.jpg) 
+![oAuth step 3](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oauth_2_hero.jpg) 
 
-The app is limited due to Instagrams strictness with their API. The app is currently is [Sandbox mode](https://www.Instagram.com/developer/Sandbox/). 
+The app is limited due to Instagram's strictness with their API. The app is currently is [Sandbox mode](https://www.Instagram.com/developer/Sandbox/). 
  
 #### TL:DR; 
 Firstly, I have to authorize your Instagram account as a Sandbox-user for this app.  
@@ -45,7 +45,7 @@ This should al be fixed when the app is authorized by Instagram, which is a pain
 ### Show user's latest post and all the used hashtags 
 ![hashtags dashboard page](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/app_0_hero.jpg)
 
-The user can see the last images they posted to Instagram, inluding the hashtags per post. On a second column, the user can see a list of all the hashtag used in these posts together.
+The user can see the last images they posted to Instagram, nicluding the hashtags per post. On a second column, the user can see a list of all the hashtag used in these posts together.
 
 ### Open stream with post with the hashtag a user selects through Socket.io 
 ![post stream selected hashtag](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/app_1_hero.jpg)
@@ -55,12 +55,12 @@ A user can click on one of the hashtags to open up a stream with post that conta
 ### Most clicked hashtags, only sent if new information (MongoDB)
 Whenever a user clicks on a hashtag the count for that hashtag goes up. Every X amount of seconds the top ten hashtags get send to the 'Top Hashtags By Users' section. Each time, the server will check whether the information is identical to the previously send information. If this is true, nothing will be sent. The storing of this data happens with MongoDB.
 
-### Service Worker and Progressive Webapp
+### Service Worker and Progressive Web-app
 ![service worker in action](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/sw_0_hero.jpg)
 
-If connection between the client and the server is lost the Service Worker kicks in. It will display a user with feedback about what possibly happend. It will also link to Instagram's hashtag search page so the user can still look at the posts for that hashtag.
+If connection between the client and the server is lost the Service Worker kicks in. It will display a user with feedback about what possibly happened. It will also link to Instagram's hashtag search page so the user can still look at the posts for that hashtag.
 
-## Emmited Socket Events
+## Emitted Socket Events
 ### Server
 * [```connected users (on event)```](#connected-users-on-event)
 * [```top tags (stream)```](#top-tags-stream)
@@ -70,7 +70,7 @@ If connection between the client and the server is lost the Service Worker kicks
 This will emit the current amount of users that are online on the app on the event of a user that connects or disconnect.
 
 #### ```top tags (on event)```
-This will emit the top clicked hashtags by users every X amount of seconds. The information will be queried on the MongoDB and only emmited if the data is diffrent than the previous emit.
+This will emit the top clicked hashtags by users every X amount of seconds. The information will be queried on the MongoDB and only emitted if the data is different than the previous emit.
 
 #### ```new tagstream (stream)```
 This will emit the latest posts for the selected hashtag per user every X amount of seconds.
