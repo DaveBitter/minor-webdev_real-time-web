@@ -24,7 +24,7 @@ I highly encourage adding issues to this repo in the case of finding one. I'm al
 * [Show user's latest post and all the used hashtags](#show-users-latest-post-and-all-the-used-hashtags)
 * [Open stream with post with the hashtag a user selects through Socket.io ](#open-stream-with-post-with-the-hashtag-a-user-selects-through-socketio)
 * [Most clicked hashtags, only sent if new information (MongoDB)](#most-clicked-hashtags-only-sent-if-new-information-mongodb)
-*service-worker-and-progressive-web-app)
+* [Service Worker and Progressive Web-app](service-worker-and-progressive-web-app)
  
 ### Instagram oAuth authentication
 ![oAuth step 1](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/oauth_0_hero.jpg)
