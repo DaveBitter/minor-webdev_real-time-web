@@ -113,6 +113,9 @@ router.get('/hashtag', (req, res) => {
 			console.info('Client (' + socket.id + ') disconnected!')
 			console.info('Total of connected clients: ' + clients.length)
 		});
+		clients.forEach((client) => {
+			tagQueryEmit(io, client)
+		})
 	});
 
 	// polling of media with the selected tag every X amount of seconds for each client seperatly
@@ -120,13 +123,13 @@ router.get('/hashtag', (req, res) => {
 		clients.forEach((client) => {
 			tagQueryEmit(io, client)
 		})
-	}, 500000);
+	}, 10000);
 
 	setInterval(() => {
 		tagCollection.find({}, {}).toArray(function(err, tags) {
 
 			tags.sort(compare);
-			io.emit('top tags', tags)
+			io.emit('top tags', tags.splice(0, 10))
 			queriedTags = tags
 		});
 	}, 500)
@@ -136,6 +139,10 @@ router.get('/hashtag', (req, res) => {
 
 	request(url + access_token, function(err, response, body) {
 		body = JSON.parse(body)
+		if (body.code == 429) {
+			console.error('Error (' + body.code + '): ' + body.error_type)
+			return res.redirect('/')
+		}
 		const media = body.data
 
 		// get al list of hashtags used in the last ten posts

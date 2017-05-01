@@ -3,35 +3,46 @@ extends ../layout.pug
 
 block content
 	- var livetag = "#canon"
-	.container
-		.row
-			.col-sm-6
-				section.card
-					.row
-						.col-md-6
-							h2 Your Latest Posts
-							each item in media
-								article
-									img(src=item.images.thumbnail.url)
-									p
-										each tag in item.tags
-											span="#" + tag + " "
-						.col-md-6
-							h2 Your Latest Hashtags
-							ul#taglist
-								each tag in tags
-									li="#"+tag
-			.col-sm-3
-				section.card
-					h2 Top Clicked Hashtags By All Users
-					ul#topTaglist
-
-			.col-sm-3
-				section.card
-					h2 Live Feed for 
-						span#feedtag=livetag
-					ul#feed
-						
+	.row
+		.col-md-4
+			section.card.card--title
+				h1.text-center Your Latest Posts
+			.row
+				each item, index in media
+					if (index==10)
+						return
+					.col-sm-6.col-md-12.col-lg-6
+						section.card
+							article
+								img(src=item.images.thumbnail.url)
+								p by 
+									b you
+								p
+									each tag, index in item.tags
+										if (index==10)
+											- return
+										span="#" + tag + " "
+		.col-md-4
+			.row
+				.col-md-12
+					section.card.card--title
+						h1.text-center Your Latest Hashtags
+					section.card
+						ul#taglist.clearfix
+							each tag, index in tags
+								if (index==10)
+									- return
+								li="#"+tag
+				.col-md-12
+					section.card.card--title
+						h1.text-center Top Hashtags By Users
+					section.card
+						ul#topTaglist.clearfix
+		.col-md-4
+			section.card.card--title
+				h1.text-center Live Feed for 
+					span#feedtag.row=livetag
+			ul#feed
 
 	script(src="https://cdn.socket.io/socket.io-1.2.0.js", type="text/javascript")
 	script(src="/js/build.js", type="text/javascript")

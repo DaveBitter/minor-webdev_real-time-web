@@ -17,7 +17,6 @@
 	})
 
 	socket.on('top tags', function(tags) {
-		console.log(tags)
 		var listElements = ""
 		tags.forEach(function(tag) {
 			listElements += "<li>" + tag.tag + " (" + tag.count + ")</li>"
@@ -29,13 +28,13 @@
 	socket.on('new tagstream', function(tag, tagMedia) {
 		var listElements = ""
 		tagMedia.forEach(function(item) {
-			listElements += '<img src="' + item.images.thumbnail.url + '"/">'
-			listElements += '<p><b>' + item.user.username + '</b></p>'
+			listElements += '<div class="col-sm-6 col-md-12 col-lg-6"><section class="card"><img src="' + item.images.thumbnail.url + '"/">'
+			listElements += '<p>by <b>' + item.user.username + '</b></p>'
 			var tags = "<p>"
 			item.tags.forEach(function(tag) {
 				tags += "<span>#" + tag + ' </span>'
 			})
-			tags += "</p>"
+			tags += "</p></section></div>"
 			listElements += tags
 		})
 

@@ -6,45 +6,57 @@
 // .accent-color            { background: #222; }
 // .primary-text-color      { color: #212121; }
 // .secondary-text-color    { color: #757575; }
-// .divider-color           { border-color: #BDBDBD; }
+// .divider-color           { border-color: #eaeaea; }
 body {
-	background-color: #fff;
+	background-color: #fafafa;
 	color: #666;
 	font-family: 'Roboto', sans-serif;
 }
 
 header {
 	position: fixed;
+	z-index: 999;
 	top: 0;
 	left: 0;
 	width: 100%;
 	background-color: #fff;
 	padding: .5em 1em;
-	border-bottom: .1em solid #BDBDBD;
+	border-bottom: .1em solid #eaeaea;
 }
 
-header + * {
-	margin-top: 8em;
+header+* {
+	margin-top: 5em;
 }
 
 h1 {
 	color: #333;
+	font-size: 1.2em;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	margin: .2em 0;
 }
 
+img {
+	width: 100%;
+}
+
 section.card {
 	padding: 1.5em;
 	background-color: #ffffff;
 	border-radius: .2em;
-	box-shadow: 0 .4em .8em 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	margin-bottom: 2em;
 }
 
-section.card > h1 {
+section.card--title {
+	margin-bottom: 1em;
+}
+
+section.card>h1 {
 	padding-bottom: .5em;
-	border-bottom: 1px solid #BDBDBD;
+	margin-bottom: .5em;
+	border-bottom: 1px solid #eaeaea;
 }
 
 button {
@@ -66,6 +78,8 @@ button {
 }
 
 a {
+	text-decoration: none;
+	border-bottom: .1em solid #eaeaea;
 	color: #222;
 	cursor: pointer;
 }
@@ -75,8 +89,23 @@ ul {
 	list-style: none;
 }
 
-ul>li {
-	text-decoration: underline;
+li {
+	float: left;
+	width: calc(50% - 1.6em);
 	cursor: pointer;
 	color: #222;
+	background-color: #fff;
+	text-align: center;
+	margin: .2em;
+	padding: .5em;
+	border: .1em solid #eaeaea;
+	transition: all .3s ease-in-out;
+}
+
+li:hover, li:active {
+	background-color: #eaeaea;
+}
+
+.text-center {
+	text-align: center;
 }

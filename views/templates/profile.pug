@@ -2,13 +2,13 @@ extends ../layout.pug
 block content
 	.container
 		.row
-			.col-md-6.col-md-offset-3
+			.col-sm-6.col-sm-offset-3
 				section.card
 					h1='Hi, ' + user.full_name
 					.row
-						.col-md-4
+						.col-sm-4
 							img(src=user.profile_picture)
-						.col-md-8
+						.col-sm-8
 							h2=user.username
 							p=user.bio
 							a(href=user.website, target='_blank')=user.website
