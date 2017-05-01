@@ -55,13 +55,28 @@ If connection between the client and the server is lost the Service Worker kicks
 
 ## Emmited Socket Events
 Server
-* [```connected users```](#connected-users)
-* [```top tags```](#top-tags)
-* [```new tagstream```](#new-tagstream)
+* [```connected users (on event)```](#connected-users)
+* [```top tags (stream)```](#top-tags)
+* [```new tagstream (stream)```](#new-tagstream)
+
+### ```connected users (on event)``
+This will emit the current amount of users that are online on the app on the event of a user that connects or disconnect.
+
+### [```top tags (on event)```
+This will emit the top clicked hashtags by users every X amount of seconds. The information will be queried on the MongoDB and only emmited if the data is diffrent than the previous emit.
+
+### ```new tagstream (stream)```
+This will emit the latest posts for the selected hashtag per user every X amount of seconds.
 
 Client
-* [```connection```](#connection)
-* [```new tag```](#new-tag)
+* [```connection (event)```](#connection)
+* [```new tag (event)```](#new-tag)
+
+### ```connection (event)```
+This will emit the new connection with the socket information (like the socket id) to be registered on the server side.
+
+### ```new tag (event)```
+This will emit a newly selected hashtag by the user on the client side to the server side. On the server the client's hashtag to stream posts with will be updated aswell as the 'Top Hashtags By Users'.
 
 ## Live Demo 
 Taken al this in account, you can view the app [here](https://minor-webdev-real-time-web.herokuapp.com/). 
