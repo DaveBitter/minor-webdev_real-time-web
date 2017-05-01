@@ -55,9 +55,9 @@ If connection between the client and the server is lost the Service Worker kicks
 
 ## Emmited Socket Events
 Server
-* [```connected users (on event)```](#connected-users)
-* [```top tags (stream)```](#top-tags)
-* [```new tagstream (stream)```](#new-tagstream)
+* [```connected users (on event)```](#connected-users-on-event)
+* [```top tags (stream)```](#top-tags-stream)
+* [```new tagstream (stream)```](#new-tagstream-stream)
 
 ### ```connected users (on event)```
 This will emit the current amount of users that are online on the app on the event of a user that connects or disconnect.
@@ -69,8 +69,8 @@ This will emit the top clicked hashtags by users every X amount of seconds. The 
 This will emit the latest posts for the selected hashtag per user every X amount of seconds.
 
 Client
-* [```connection (event)```](#connection)
-* [```new tag (event)```](#new-tag)
+* [```connection (on event)```](#connection-on-event)
+* [```new tag (on event)```](#new-tag-on-event)
 
 ### ```connection (event)```
 This will emit the new connection with the socket information (like the socket id) to be registered on the server side.
