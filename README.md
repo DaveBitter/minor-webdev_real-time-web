@@ -13,7 +13,6 @@ This repository holds the code for the course 'Real-time Web', part of the minor
 I highly encourage adding issues to this repo in the case of finding one. I'm always up for improving my code. 
  
 ## Features 
-
 * [Instagram oAuth authentication ](#instagram-oauth-authentication)
 * [Show user's latest post and all the used hashtags](#show-users-latest-post-and-all-the-used-hashtags)
 * [Open stream with post with the hashtag a user selects through Socket.io ](#open-stream-with-post-with-the-hashtag-a-user-selects-through-socketio)
@@ -53,7 +52,17 @@ Whenever a user clicks on a hashtag the count for that hashtag goes up. Every X 
 ![service worker in action](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/sw_0_hero.jpg)
 
 If connection between the client and the server is lost the Service Worker kicks in. It will display a user with feedback about what possibly happend. It will also link to Instagram's hashtag search page so the user can still look at the posts for that hashtag.
- 
+
+## Emmited Socket Events
+Server
+* [```connected users```](#connected-users)
+* [```top tags```](#top-tags)
+* [```new tagstream```](#new-tagstream)
+
+Client
+* [```connection```](#connection)
+* [```new tag```](#new-tag)
+
 ## Live Demo 
 Taken al this in account, you can view the app [here](https://minor-webdev-real-time-web.herokuapp.com/). 
  
