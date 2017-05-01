@@ -72,10 +72,10 @@ This will emit the latest posts for the selected hashtag per user every X amount
 * [```connection (on event)```](#connection-on-event)
 * [```new tag (on event)```](#new-tag-on-event)
 
-#### ```connection (event)```
+#### ```connection (on event)```
 This will emit the new connection with the socket information (like the socket id) to be registered on the server side.
 
-#### ```new tag (event)```
+#### ```new tag (on event)```
 This will emit a newly selected hashtag by the user on the client side to the server side. On the server the client's hashtag to stream posts with will be updated aswell as the 'Top Hashtags By Users'.
 
 ## Live Demo 
