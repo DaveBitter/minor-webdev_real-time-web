@@ -32,7 +32,7 @@ block content
 							each tag, index in tags
 								if (index==10)
 									- return
-								li="#"+tag
+								li(data-tag=tag)="#"+tag
 				.col-md-12
 					section.card.card--title
 						h1.text-center Top Hashtags By Users

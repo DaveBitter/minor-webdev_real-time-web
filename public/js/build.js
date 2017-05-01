@@ -12,18 +12,15 @@
 
 	socket.emit('connection', socket.id)
 
-	elements.taglist.forEach(function(item) {
-		item.addEventListener('click', function(e) {
-			sendTag(e.target.innerHTML)
-		})
-	})
+	bindEventlistener(elements.taglist)
 
 	socket.on('top tags', function(tags) {
 		var listElements = ""
 		tags.forEach(function(tag) {
-			listElements += "<li>" + tag.tag + " (" + tag.count + ")</li>"
+			listElements += "<li data-tag=" + tag.tag + ">#" + tag.tag + " (" + tag.count + ")</li>"
 		})
 		elements.topTaglist.innerHTML = listElements
+		bindEventlistener(elements.topTaglist.childNodes)
 	})
 
 
@@ -45,13 +42,23 @@
 		elements.feedtag.innerHTML = "#" + tag
 	})
 
-	socket.on('connected users', function(amount){
-		console.log(amount)
+	socket.on('connected users', function(amount) {
 		elements.status.innerText = 'users currently online: ' + amount
 	})
 
 	function sendTag(tag) {
 		socket.emit('new tag', tag)
 	}
+
+	function bindEventlistener(arr) {
+		arr.forEach(function(item) {
+			item.addEventListener('click', function(e) {
+				console.log(e.target.dataset.tag)
+				var tag = e.target.dataset.tag
+				sendTag(tag)
+			})
+		})
+	}
+
 })();
 },{}]},{},[1]);

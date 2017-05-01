@@ -67,6 +67,7 @@ router.get('/hashtag', (req, res) => {
 
 		// event where user clicks on a new hashtag
 		socket.on('new tag', function(tag) {
+			console.log(tag)
 			// update tag in clients array for client
 			clients.map((client) => {
 				if (client.id == socket.id) {
@@ -130,9 +131,8 @@ router.get('/hashtag', (req, res) => {
 
 	setInterval(() => {
 		tagCollection.find({}, {}).toArray(function(err, tags) {
-
 			tags.sort(compare)
-			tags.splice(0, 10)
+			tags.slice(0, 10)
 
 			// check if your not re-sending the exact same data
 			if (arraysEqual(tags, queriedTags) !== true) {
@@ -151,6 +151,7 @@ router.get('/hashtag', (req, res) => {
 			console.error('Error (' + body.code + '): ' + body.error_type)
 			return res.redirect('/')
 		}
+
 		const media = body.data
 
 		// get al list of hashtags used in the last ten posts

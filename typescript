@@ -1,0 +1,90 @@
+Script started on ma 01 mei 2017 15:56:50 CEST
+]0;davbitter@y500: ~/Documents/hva/minor_webdev/real-time-web[01;32mdavbitter@y500[00m:[01;34m~/Documents/hva/minor_webdev/real-time-web[00m$ cd ../
+browser-technologies/ performance-matters/  web-app-from-scratch/
+css-to-the-rescue/    real-time-web/        web-of-things/
+]0;davbitter@y500: ~/Documents/hva/minor_webdev/real-time-web[01;32mdavbitter@y500[00m:[01;34m~/Documents/hva/minor_webdev/real-time-web[00m$ cd ../[K[K[K[K[K[Kdoc
+]0;davbitter@y500: ~/Documents[01;32mdavbitter@y500[00m:[01;34m~/Documents[00m$ cd Vir[K[K[Kviriciti/
+]0;davbitter@y500: ~/Documents/viriciti[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti[00m$ cd scripts/
+]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ ./mongo
+mongo
+mongo
+0aa92a0cf7b0fe555b30f1b1af7fa1186781a6110d62320544c8d0e47d75f975
+]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ mongochef
+May 01, 2017 3:57:34 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+May 01, 2017 3:57:34 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+May 01, 2017 3:57:34 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+May 01, 2017 3:57:34 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 9]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=511757}
+May 01, 2017 3:57:34 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Opened connection [connectionId{localValue:2, serverValue:2}] to localhost:27017
+^C^C^C]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ mongochef
+May 01, 2017 3:57:44 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+May 01, 2017 3:57:44 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+May 01, 2017 3:57:44 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Opened connection [connectionId{localValue:1, serverValue:3}] to localhost:27017
+May 01, 2017 3:57:44 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 9]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=651422}
+May 01, 2017 3:57:44 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Opened connection [connectionId{localValue:2, serverValue:4}] to localhost:27017
+
+(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 781 was not found when attempting to remove it
+
+(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 2689 was not found when attempting to remove it
+May 01, 2017 3:58:59 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+May 01, 2017 3:58:59 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+May 01, 2017 3:58:59 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Opened connection [connectionId{localValue:3, serverValue:5}] to localhost:27017
+May 01, 2017 3:58:59 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 9]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=630905}
+May 01, 2017 3:58:59 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Opened connection [connectionId{localValue:4, serverValue:6}] to localhost:27017
+
+(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 6230 was not found when attempting to remove it
+May 01, 2017 4:00:50 PM com.mongodb.diagnostics.logging.JULLogger log
+INFO: Opened connection [connectionId{localValue:5, serverValue:9}] to localhost:27017
+
+(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 7361 was not found when attempting to remove it
+
+(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 7696 was not found when attempting to remove it
+
+(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 8714 was not found when attempting to remove it
+
+(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 13329 was not found when attempting to remove it
+
+(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 13539 was not found when attempting to remove it
+
+(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 13908 was not found when attempting to remove it
+
+(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 14003 was not found when attempting to remove it
+
+(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 14741 was not found when attempting to remove it
+^C]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ ^C
+]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ ^C
+]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ added [K[K[K[K[K[Kga 'user can now also clikc on t[K[K[K[K[K[K[Kck on top #'
+fatal: Not a git repository (or any of the parent directories): .git
+]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ gp
+fatal: Not a git repository (or any of the parent directories): .git
+]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ gpa 'user can now also click on top #' '
+fatal: Not a git repository (or any of the parent directories): .git
+]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ ga 'user can now also click on top # '[Kg[Krtw
+]0;davbitter@y500: ~/Documents/hva/minor_webdev/real-time-web[01;32mdavbitter@y500[00m:[01;34m~/Documents/hva/minor_webdev/real-time-web[00m$ gs
+On branch develop
+Your branch is up-to-date with 'origin/develop'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   client/app.js[m
+	[31mmodified:   public/js/build.js[m
+	[31mmodified:   routes/profile.js[m
+	[31mmodified:   views/templates/hashtag.pug[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be co
