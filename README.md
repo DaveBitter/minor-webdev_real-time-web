@@ -18,9 +18,9 @@ I highly encourage adding issues to this repo in the case of finding one. I'm al
 * Open stream with post with the hashtag a user selects through Socket.io 
  
 ### Instagram oAuth authentication
-![oath step 1](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oath_0_hero.png)
-![oath step 2](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oath_1_hero.png) 
-![oath step 3](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oath_2_hero.png) 
+![oauth step 1](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oauth_0_hero.png)
+![oauth step 2](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oauth_1_hero.png) 
+![oauth step 3](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oauth_2_hero.png) 
 
 The app is limited due to Instagrams strictness with their API. The app is currently is [Sandbox mode](https://www.Instagram.com/developer/Sandbox/). 
  
