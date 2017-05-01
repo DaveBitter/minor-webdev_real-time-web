@@ -14,11 +14,11 @@ I highly encourage adding issues to this repo in the case of finding one. I'm al
  
 ## Features 
 
-* [Instagram oAuth authentication ](Instagram-oAuth-authentication )
-* [Show user's latest post and all the used hashtags](Show-users-latest-post-and-all-the-used-hashtags)
-* [Open stream with post with the hashtag a user selects through Socket.io ](Open-stream-with-post-with-the-hashtag-a-user-selects-through-Socket.io)
-* [Most clicked hashtags, only sent if new information (MongoDB)](Most-clicked-hashtags,-only-sent-if-new-information-(MongoDB))
-* [Service Worker and Progressive Webapp](Service-Worker-and-Progressive-Webapp)
+* [Instagram oAuth authentication ](#Instagram-oAuth-authentication )
+* [Show user's latest post and all the used hashtags](#Show-users-latest-post-and-all-the-used-hashtags)
+* [Open stream with post with the hashtag a user selects through Socket.io ](#Open-stream-with-post-with-the-hashtag-a-user-selects-through-Socket.io)
+* [Most clicked hashtags, only sent if new information (MongoDB)](#Most-clicked-hashtags,-only-sent-if-new-information-(MongoDB))
+* [Service Worker and Progressive Webapp](#Service-Worker-and-Progressive-Webapp)
  
 ### Instagram oAuth authentication
 ![oauth step 1](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oauth_0_hero.png)
