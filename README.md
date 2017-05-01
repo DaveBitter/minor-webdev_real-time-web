@@ -16,6 +16,7 @@ I highly encourage adding issues to this repo in the case of finding one. I'm al
 * Instagram oAuth authentication 
 * Show user's latest post and all the used hashtags 
 * Open stream with post with the hashtag a user selects through Socket.io 
+* Most clicked hashtags, only sent if new information
  
 ### Instagram oAuth authentication
 ![oauth step 1](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oauth_0_hero.png)
@@ -33,13 +34,18 @@ Great! You should be able to now go through the oAuth flow. Final thing though. 
  
 This should al be fixed when the app is authorized by Instagram, which is a pain in the butt. Please accept this for now. 
 
-## Show user's latest post and all the used hashtags 
+### Show user's latest post and all the used hashtags 
 ![hashtags dashboard page](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/app_0_hero.png)
 
 The user can see the last images they posted to Instagram, inluding the hashtags per post. On a second column, the user can see a list of all the hashtag used in these posts together.
 
-## Open stream with post with the hashtag a user selects through Socket.io 
+### Open stream with post with the hashtag a user selects through Socket.io 
 ![post stream selected hashtag](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/app_1_hero.png)
+
+A user can click on one of the hashtags to open up a stream with post that contain that hashtag. Every X amount of seconds a fresh set of posts is send over the socket connection. Which user gets which posts based on their hashtag is stored on the server side of this application.
+
+### Most clicked hashtags, only sent if new information
+Whenever a user clicks on a hashtag the count for that hashtag goes up. Every X amount of seconds the top ten hashtags get send to the 'Top Hashtags By Users' section. Each time, the server will check whether the information is identical to the previously send information. If this is true, nothin will be sent.
  
 ## Live Demo 
 Taken al this in account, you can view the app [here](https://minor-webdev-real-time-web.herokuapp.com/). 
