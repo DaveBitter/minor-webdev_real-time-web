@@ -67,6 +67,7 @@ Taken al this in account, you can view the app [here](https://minor-webdev-real-
  
 ### Populate the ```.env``` file 
 Save the ```example.env``` as ```env``` and fill in the values. 
+You will need to get the keys from the Instagram API aswell as set-up a MongoDB database.
  
 ### Start up the server 
 When you run this command, changes in server side JS files will be watched and the server will restart automatically, changes in client side JS files will be watched and browserified and the server will be restarted. 
