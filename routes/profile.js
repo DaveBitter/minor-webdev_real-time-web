@@ -128,11 +128,16 @@ router.get('/hashtag', (req, res) => {
 	setInterval(() => {
 		tagCollection.find({}, {}).toArray(function(err, tags) {
 
-			tags.sort(compare);
-			io.emit('top tags', tags.splice(0, 10))
+			tags.sort(compare)
+			tags.splice(0, 10)
+
+			// check if your not re-sending the exact same data
+			if(arraysEqual(tags, queriedTags) !== true) {
+				io.emit('top tags', tags)
+			}
 			queriedTags = tags
 		});
-	}, 500)
+	}, 1000)
 
 	// Get the last ten posts of client
 	const url = 'https://api.instagram.com/v1/users/self/media/recent/?count=10&access_token='
@@ -176,6 +181,19 @@ const unique = (arr) => {
 		return seen.hasOwnProperty(item) ? false : (seen[item] = true);
 	});
 
+}
+
+// check if array is identical to an other
+// modified code from http://stackoverflow.com/a/4025958/7885680
+function arraysEqual(arr1, arr2) {
+	if (arr1.length !== arr2.length)
+		return false;
+	for (var i = arr1.length; i--;) {
+		if (arr1[i].id !== arr2[i].id)
+			return false;
+	}
+
+	return true;
 }
 
 function compare(a, b) {
