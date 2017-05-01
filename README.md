@@ -11,7 +11,14 @@ This repository holds the code for the course 'Real-time Web', part of the minor
  
 ## Issues 
 I highly encourage adding issues to this repo in the case of finding one. I'm always up for improving my code. 
- 
+
+## Table Of Contents
+* [Features ](#features)
+* [Emmited Socket Events](#emitted-socket-events)
+* [Live Demo ](#live-demo)
+* [Getting started ](#getting-started)
+* [License ](#license)
+
 ## Features 
 * [Instagram oAuth authentication ](#instagram-oauth-authentication)
 * [Show user's latest post and all the used hashtags](#show-users-latest-post-and-all-the-used-hashtags)
@@ -54,7 +61,7 @@ Whenever a user clicks on a hashtag the count for that hashtag goes up. Every X 
 If connection between the client and the server is lost the Service Worker kicks in. It will display a user with feedback about what possibly happend. It will also link to Instagram's hashtag search page so the user can still look at the posts for that hashtag.
 
 ## Emmited Socket Events
-## Server
+### Server
 * [```connected users (on event)```](#connected-users-on-event)
 * [```top tags (stream)```](#top-tags-stream)
 * [```new tagstream (stream)```](#new-tagstream-stream)
@@ -68,7 +75,7 @@ This will emit the top clicked hashtags by users every X amount of seconds. The 
 #### ```new tagstream (stream)```
 This will emit the latest posts for the selected hashtag per user every X amount of seconds.
 
-## Client
+### Client
 * [```connection (on event)```](#connection-on-event)
 * [```new tag (on event)```](#new-tag-on-event)
 
