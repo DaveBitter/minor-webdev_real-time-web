@@ -4,7 +4,7 @@ Dave Bitter
 ![app hero](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/hero.jpg) 
 
 ## Mirror Stream
-    V 1.0.2
+    V 1.1.0
  
 ## General 
 This repository holds the code for the course 'Real-time Web', part of the minor "Webdevelopment" at the [HvA](http://www.hva.nl/) 
