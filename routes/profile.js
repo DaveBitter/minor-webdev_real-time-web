@@ -140,7 +140,7 @@ router.get('/hashtag', (req, res) => {
 			}
 			queriedTags = tags
 		});
-	}, 1000)
+	}, 100)
 
 	// Get the last ten posts of client
 	const url = 'https://api.instagram.com/v1/users/self/media/recent/?count=10&access_token='
@@ -193,7 +193,7 @@ function arraysEqual(arr1, arr2) {
 	if (arr1.length !== arr2.length)
 		return false;
 	for (var i = arr1.length; i--;) {
-		if (arr1[i].id !== arr2[i].id)
+		if (arr1[i].tag !== arr2[i].tag)
 			return false;
 	}
 

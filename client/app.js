@@ -1,4 +1,6 @@
 (function() {
+	var socket = io();
+
 	var elements = {
 		taglist: document.getElementById('taglist').childNodes,
 		topTaglist: document.getElementById('topTaglist'),
@@ -7,7 +9,9 @@
 		status: document.getElementById('status')
 	}
 
-	var socket = io();
+	if ('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/sw.js')
+	}
 
 	socket.emit('connection', socket.id)
 
@@ -52,7 +56,6 @@
 	function bindEventlistener(arr) {
 		arr.forEach(function(item) {
 			item.addEventListener('click', function(e) {
-				console.log(e.target.dataset.tag)
 				var tag = e.target.dataset.tag
 				sendTag(tag)
 			})
