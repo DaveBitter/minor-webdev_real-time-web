@@ -42,7 +42,7 @@ router.get('/', (req, res) => {
 
 router.get('/hashtag', (req, res) => {
 	const io = req.app.locals.settings.io
-	const tagCollection = db.collection('topTags');
+	const tagCollection = db.collection('hashtags');
 	let queriedTags = []
 
 	io.on('connection', function(socket) {
