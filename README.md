@@ -59,10 +59,10 @@ Server
 * [```top tags (stream)```](#top-tags)
 * [```new tagstream (stream)```](#new-tagstream)
 
-### ```connected users (on event)``
+### ```connected users (on event)```
 This will emit the current amount of users that are online on the app on the event of a user that connects or disconnect.
 
-### [```top tags (on event)```
+### ```top tags (on event)```
 This will emit the top clicked hashtags by users every X amount of seconds. The information will be queried on the MongoDB and only emmited if the data is diffrent than the previous emit.
 
 ### ```new tagstream (stream)```
