@@ -12,10 +12,15 @@ const session = require('express-session')
 const indexRouter = require('./routes/index.js')
 const profileRouter = require('./routes/profile.js')
 
+/* MONGODB CONFIGURATION
+----------------------------------------- */
+const MongoClient = require("mongodb").MongoClient;
+const dbConfig = process.env.MONGODB_URI;
 
-// io.on('connection', function(socket) {
-// 	console.log("client connected!", socket.id)
-// });
+MongoClient.connect(dbConfig, (err, database) => {
+  if (err) return console.log(err)
+  db = database
+});
 
 const client_id = process.env.CLIENTID
 const client_secret = process.env.CLIENTSECRET

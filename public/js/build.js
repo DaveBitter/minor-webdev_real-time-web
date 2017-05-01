@@ -2,6 +2,7 @@
 (function() {
 	var elements = {
 		taglist: document.getElementById('taglist').childNodes,
+		topTaglist: document.getElementById('topTaglist'),
 		feedtag: document.getElementById('feedtag'),
 		feed: document.getElementById('feed')
 	}
@@ -15,6 +16,16 @@
 			sendTag(e.target.innerHTML)
 		})
 	})
+
+	socket.on('top tags', function(tags) {
+		console.log(tags)
+		var listElements = ""
+		tags.forEach(function(tag) {
+			listElements += "<li>" + tag.tag + " (" + tag.count + ")</li>"
+		})
+		elements.topTaglist.innerHTML = listElements
+	})
+
 
 	socket.on('new tagstream', function(tag, tagMedia) {
 		var listElements = ""

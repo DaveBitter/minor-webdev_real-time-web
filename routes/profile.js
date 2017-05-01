@@ -42,6 +42,9 @@ router.get('/', (req, res) => {
 
 router.get('/hashtag', (req, res) => {
 	const io = req.app.locals.settings.io
+	const tagCollection = db.collection('topTags');
+	let queriedTags = []
+
 	io.on('connection', function(socket) {
 		// check if client is already in clients array
 		// prevents duplicates
@@ -60,7 +63,7 @@ router.get('/hashtag', (req, res) => {
 		// showing what's going on
 		console.info('Client (' + socket.id + ') connected!')
 		console.info('Total of connected clients: ' + clients.length)
-		
+
 		// event where user clicks on a new hashtag
 		socket.on('new tag', function(tag) {
 			// update tag in clients array for client
@@ -69,6 +72,36 @@ router.get('/hashtag', (req, res) => {
 					client.tag = tag
 				}
 			})
+
+			let updateData = {}
+			let exists = false
+
+			queriedTags.map((queriedTag) => {
+				if (queriedTag.tag == tag) {
+					exists = true
+					updateData = queriedTag
+					updateData.count++
+				}
+			})
+
+			if (exists == true) {
+				tagCollection.findOne({
+					_id: updateData._id
+				}, function(err, result) {
+					tagCollection.updateOne(result, {
+						$set: updateData
+					}, (error, result) => {
+						if (err) return console.log(err);
+					});
+				});
+			} else {
+				tagCollection.save({
+					tag: tag,
+					count: 1
+				}, (err, result) => {
+					if (err) return console.log(err);
+				});
+			}
 		});
 
 		socket.on('disconnect', function() {
@@ -88,6 +121,15 @@ router.get('/hashtag', (req, res) => {
 			tagQueryEmit(io, client)
 		})
 	}, 5000);
+
+	setInterval(() => {
+		tagCollection.find({}, {}).toArray(function(err, tags) {
+
+			tags.sort(compare);
+			io.emit('top tags', tags)
+			queriedTags = tags
+		});
+	}, 500)
 
 	// Get the last ten posts of client
 	const url = 'https://api.instagram.com/v1/users/self/media/recent/?count=10&access_token='
@@ -127,6 +169,14 @@ const unique = (arr) => {
 		return seen.hasOwnProperty(item) ? false : (seen[item] = true);
 	});
 
+}
+
+function compare(a, b) {
+	if (a.count < b.count)
+		return 1;
+	if (a.count > b.count)
+		return -1;
+	return 0;
 }
 
 

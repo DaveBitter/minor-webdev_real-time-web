@@ -57,7 +57,7 @@ ul {
 	list-style: none;
 }
 
-#taglist>li {
+ul>li {
 	cursor: pointer;
 	color: #FF5252;
 }

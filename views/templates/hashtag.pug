@@ -5,22 +5,28 @@ block content
 	- var livetag = "#canon"
 	.container
 		.row
-			.col-sm-4
+			.col-sm-6
 				section.card
-					h2 Your Latest Posts
-					each item in media
-						article
-							img(src=item.images.thumbnail.url)
-							p
-								each tag in item.tags
-									span="#" + tag + " "
-			.col-sm-4
+					.row
+						.col-md-6
+							h2 Your Latest Posts
+							each item in media
+								article
+									img(src=item.images.thumbnail.url)
+									p
+										each tag in item.tags
+											span="#" + tag + " "
+						.col-md-6
+							h2 Your Latest Hashtags
+							ul#taglist
+								each tag in tags
+									li="#"+tag
+			.col-sm-3
 				section.card
-					h2 Your Latest Hashtags
-					ul#taglist
-						each tag in tags
-							li="#"+tag
-			.col-sm-4
+					h2 Top Clicked Hashtags By All Users
+					ul#topTaglist
+
+			.col-sm-3
 				section.card
 					h2 Live Feed for 
 						span#feedtag=livetag
