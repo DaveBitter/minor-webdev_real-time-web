@@ -67,7 +67,6 @@ router.get('/hashtag', (req, res) => {
 
 		// event where user clicks on a new hashtag
 		socket.on('new tag', function(tag) {
-			console.log(tag)
 			// update tag in clients array for client
 			clients.map((client) => {
 				if (client.id == socket.id) {
