@@ -1,20 +1,34 @@
-// .dark-primary-color      { background: #0288D1; }
-// .darker-primary-color    { background: #0273b1; }
+// .dark-primary-color      { background: #333; }
+// .darker-primary-color    { background: #222; }
 // .default-primary-color   { background: #03A9F4; }
 // .light-primary-color     { background: #B3E5FC; }
 // .text-primary-color      { color: #FFFFFF; }
-// .accent-color            { background: #FF5252; }
+// .accent-color            { background: #222; }
 // .primary-text-color      { color: #212121; }
 // .secondary-text-color    { color: #757575; }
 // .divider-color           { border-color: #BDBDBD; }
 body {
-	background-color: #eee;
+	background-color: #fff;
 	color: #666;
 	font-family: 'Roboto', sans-serif;
 }
 
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	padding: .5em 1em;
+	border-bottom: .1em solid #BDBDBD;
+}
+
+header + * {
+	margin-top: 8em;
+}
+
 h1 {
-	color: #0288D1;
+	color: #333;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,6 +42,11 @@ section.card {
 	box-shadow: 0 .4em .8em 0 rgba(0, 0, 0, 0.2);
 }
 
+section.card > h1 {
+	padding-bottom: .5em;
+	border-bottom: 1px solid #BDBDBD;
+}
+
 button {
 	display: block;
 	width: 100%;
@@ -38,17 +57,16 @@ button {
 }
 
 .btn--primary {
-	background-color: #0288D1;
+	background-color: #333;
 	color: #ffffff;
 }
 
 .btn--primary:hover, .btn--primary:focus {
-	background-color: #0273b1;
+	background-color: #222;
 }
 
 a {
-	text-decoration: none;
-	color: #FF5252;
+	color: #222;
 	cursor: pointer;
 }
 
@@ -58,6 +76,7 @@ ul {
 }
 
 ul>li {
+	text-decoration: underline;
 	cursor: pointer;
-	color: #FF5252;
+	color: #222;
 }
