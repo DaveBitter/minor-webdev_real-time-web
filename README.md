@@ -1,7 +1,7 @@
 # Minor WebDev | Real-time Web 
 Dave Bitter 
 
-![app hero](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/hero_1.jpg) 
+![app hero](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/app_0_hero.jpg) 
 
 ## Mirror Stream
     V 1.0.2
