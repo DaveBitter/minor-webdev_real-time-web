@@ -15,7 +15,7 @@ I highly encourage adding issues to this repo in the case of finding one. I'm al
 ## Features 
 
 * [Instagram oAuth authentication ](Instagram-oAuth-authentication )
-* [Show user's latest post and all the used hashtags ](Show-user's-latest-post and-all-the-used-hashtags )
+* [Show user's latest post and all the used hashtags ](Show-users-latest-post and-all-the-used-hashtags )
 * [Open stream with post with the hashtag a user selects through Socket.io ](Open-stream-with-post-with-the-hashtag-a-user-selects-through-Socket.io)
 * [Most clicked hashtags, only sent if new information (MongoDB)](Most-clicked-hashtags,-only-sent-if-new-information-(MongoDB))
 * [Service Worker and Progressive Webapp](Service-Worker-and-Progressive-Webapp)
