@@ -54,28 +54,28 @@ Whenever a user clicks on a hashtag the count for that hashtag goes up. Every X 
 If connection between the client and the server is lost the Service Worker kicks in. It will display a user with feedback about what possibly happend. It will also link to Instagram's hashtag search page so the user can still look at the posts for that hashtag.
 
 ## Emmited Socket Events
-Server
+## Server
 * [```connected users (on event)```](#connected-users-on-event)
 * [```top tags (stream)```](#top-tags-stream)
 * [```new tagstream (stream)```](#new-tagstream-stream)
 
-### ```connected users (on event)```
+#### ```connected users (on event)```
 This will emit the current amount of users that are online on the app on the event of a user that connects or disconnect.
 
-### ```top tags (on event)```
+#### ```top tags (on event)```
 This will emit the top clicked hashtags by users every X amount of seconds. The information will be queried on the MongoDB and only emmited if the data is diffrent than the previous emit.
 
-### ```new tagstream (stream)```
+#### ```new tagstream (stream)```
 This will emit the latest posts for the selected hashtag per user every X amount of seconds.
 
-Client
+## Client
 * [```connection (on event)```](#connection-on-event)
 * [```new tag (on event)```](#new-tag-on-event)
 
-### ```connection (event)```
+#### ```connection (event)```
 This will emit the new connection with the socket information (like the socket id) to be registered on the server side.
 
-### ```new tag (event)```
+#### ```new tag (event)```
 This will emit a newly selected hashtag by the user on the client side to the server side. On the server the client's hashtag to stream posts with will be updated aswell as the 'Top Hashtags By Users'.
 
 ## Live Demo 
