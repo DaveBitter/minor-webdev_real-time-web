@@ -16,7 +16,7 @@ I highly encourage adding issues to this repo in the case of finding one. I'm al
 * Instagram oAuth authentication 
 * Show user's latest post and all the used hashtags 
 * Open stream with post with the hashtag a user selects through Socket.io 
-* Most clicked hashtags, only sent if new information
+* Most clicked hashtags, only sent if new information (MongoDB)
 * Service Worker and Progressive Webapp
  
 ### Instagram oAuth authentication
@@ -45,8 +45,8 @@ The user can see the last images they posted to Instagram, inluding the hashtags
 
 A user can click on one of the hashtags to open up a stream with post that contain that hashtag. Every X amount of seconds a fresh set of posts is send over the socket connection. Which user gets which posts based on their hashtag is stored on the server side of this application.
 
-### Most clicked hashtags, only sent if new information
-Whenever a user clicks on a hashtag the count for that hashtag goes up. Every X amount of seconds the top ten hashtags get send to the 'Top Hashtags By Users' section. Each time, the server will check whether the information is identical to the previously send information. If this is true, nothing will be sent.
+### Most clicked hashtags, only sent if new information (MongoDB)
+Whenever a user clicks on a hashtag the count for that hashtag goes up. Every X amount of seconds the top ten hashtags get send to the 'Top Hashtags By Users' section. Each time, the server will check whether the information is identical to the previously send information. If this is true, nothing will be sent. The storing of this data happens with MongoDB.
 
 ### Service Worker and Progressive Webapp
 ![service worker in action](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/sw_0_hero.jpg)
