@@ -18,9 +18,9 @@ I highly encourage adding issues to this repo in the case of finding one. I'm al
 * Open stream with post with the hashtag a user selects through Socket.io 
  
 ### Instagram oAuth authentication
-![oath step 1](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oath_0_hero.jpg)
-![oath step 2](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oath_1_hero.jpg) 
-![oath step 3](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oath_2_hero.jpg) 
+![oath step 1](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oath_0_hero.png)
+![oath step 2](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oath_1_hero.png) 
+![oath step 3](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/oath_2_hero.png) 
 
 The app is limited due to Instagrams strictness with their API. The app is currently is [Sandbox mode](https://www.Instagram.com/developer/Sandbox/). 
  
@@ -34,12 +34,12 @@ Great! You should be able to now go through the oAuth flow. Final thing though. 
 This should al be fixed when the app is authorized by Instagram, which is a pain in the butt. Please accept this for now. 
 
 ## Show user's latest post and all the used hashtags 
-![hashtags dashboard page](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/app_0_hero.jpg)
+![hashtags dashboard page](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/app_0_hero.png)
 
 The user can see the last images they posted to Instagram, inluding the hashtags per post. On a second column, the user can see a list of all the hashtag used in these posts together.
 
 ## Open stream with post with the hashtag a user selects through Socket.io 
-![post stream selected hashtag](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/app_1_hero.jpg)
+![post stream selected hashtag](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/app_1_hero.png)
  
 ## Live Demo 
 Taken al this in account, you can view the app [here](https://minor-webdev-real-time-web.herokuapp.com/). 
