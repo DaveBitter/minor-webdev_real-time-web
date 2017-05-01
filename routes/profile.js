@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
 
 	request(options, function(err, response, body) {
 		if (body.code == 400) {
-			res.redirect('/')
+			return res.redirect('/')
 		}
 		access_token = body.access_token
 		const user = body.user
@@ -120,7 +120,7 @@ router.get('/hashtag', (req, res) => {
 		clients.forEach((client) => {
 			tagQueryEmit(io, client)
 		})
-	}, 5000);
+	}, 500000);
 
 	setInterval(() => {
 		tagCollection.find({}, {}).toArray(function(err, tags) {
