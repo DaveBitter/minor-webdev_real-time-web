@@ -49,7 +49,7 @@ A user can click on one of the hashtags to open up a stream with post that conta
 Whenever a user clicks on a hashtag the count for that hashtag goes up. Every X amount of seconds the top ten hashtags get send to the 'Top Hashtags By Users' section. Each time, the server will check whether the information is identical to the previously send information. If this is true, nothing will be sent.
 
 ### Service Worker and Progressive Webapp
-![service worker in action](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/sw_0_hero.png)
+![service worker in action](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/develop/screenshots/sw_0_hero.jpg)
 
 If connection between the client and the server is lost the Service Worker kicks in. It will display a user with feedback about what possibly happend. It will also link to Instagram's hashtag search page so the user can still look at the posts for that hashtag.
  
