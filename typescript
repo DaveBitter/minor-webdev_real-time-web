@@ -1,143 +1,0 @@
-Script started on ma 01 mei 2017 15:56:50 CEST
-]0;davbitter@y500: ~/Documents/hva/minor_webdev/real-time-web[01;32mdavbitter@y500[00m:[01;34m~/Documents/hva/minor_webdev/real-time-web[00m$ cd ../
-browser-technologies/ performance-matters/  web-app-from-scratch/
-css-to-the-rescue/    real-time-web/        web-of-things/
-]0;davbitter@y500: ~/Documents/hva/minor_webdev/real-time-web[01;32mdavbitter@y500[00m:[01;34m~/Documents/hva/minor_webdev/real-time-web[00m$ cd ../[K[K[K[K[K[Kdoc
-]0;davbitter@y500: ~/Documents[01;32mdavbitter@y500[00m:[01;34m~/Documents[00m$ cd Vir[K[K[Kviriciti/
-]0;davbitter@y500: ~/Documents/viriciti[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti[00m$ cd scripts/
-]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ ./mongo
-mongo
-mongo
-0aa92a0cf7b0fe555b30f1b1af7fa1186781a6110d62320544c8d0e47d75f975
-]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ mongochef
-May 01, 2017 3:57:34 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-May 01, 2017 3:57:34 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
-May 01, 2017 3:57:34 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
-May 01, 2017 3:57:34 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 9]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=511757}
-May 01, 2017 3:57:34 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Opened connection [connectionId{localValue:2, serverValue:2}] to localhost:27017
-^C^C^C]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ mongochef
-May 01, 2017 3:57:44 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-May 01, 2017 3:57:44 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
-May 01, 2017 3:57:44 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Opened connection [connectionId{localValue:1, serverValue:3}] to localhost:27017
-May 01, 2017 3:57:44 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 9]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=651422}
-May 01, 2017 3:57:44 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Opened connection [connectionId{localValue:2, serverValue:4}] to localhost:27017
-
-(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 781 was not found when attempting to remove it
-
-(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 2689 was not found when attempting to remove it
-May 01, 2017 3:58:59 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
-May 01, 2017 3:58:59 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
-May 01, 2017 3:58:59 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Opened connection [connectionId{localValue:3, serverValue:5}] to localhost:27017
-May 01, 2017 3:58:59 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 9]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=630905}
-May 01, 2017 3:58:59 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Opened connection [connectionId{localValue:4, serverValue:6}] to localhost:27017
-
-(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 6230 was not found when attempting to remove it
-May 01, 2017 4:00:50 PM com.mongodb.diagnostics.logging.JULLogger log
-INFO: Opened connection [connectionId{localValue:5, serverValue:9}] to localhost:27017
-
-(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 7361 was not found when attempting to remove it
-
-(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 7696 was not found when attempting to remove it
-
-(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 8714 was not found when attempting to remove it
-
-(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 13329 was not found when attempting to remove it
-
-(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 13539 was not found when attempting to remove it
-
-(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 13908 was not found when attempting to remove it
-
-(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 14003 was not found when attempting to remove it
-
-(3T MongoChef Core:23904): GLib-CRITICAL **: Source ID 14741 was not found when attempting to remove it
-^C]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ ^C
-]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ ^C
-]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ added [K[K[K[K[K[Kga 'user can now also clikc on t[K[K[K[K[K[K[Kck on top #'
-fatal: Not a git repository (or any of the parent directories): .git
-]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ gp
-fatal: Not a git repository (or any of the parent directories): .git
-]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ gpa 'user can now also click on top #' '
-fatal: Not a git repository (or any of the parent directories): .git
-]0;davbitter@y500: ~/Documents/viriciti/scripts[01;32mdavbitter@y500[00m:[01;34m~/Documents/viriciti/scripts[00m$ ga 'user can now also click on top # '[Kg[Krtw
-]0;davbitter@y500: ~/Documents/hva/minor_webdev/real-time-web[01;32mdavbitter@y500[00m:[01;34m~/Documents/hva/minor_webdev/real-time-web[00m$ gs
-On branch develop
-Your branch is up-to-date with 'origin/develop'.
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	[31mmodified:   client/app.js[m
-	[31mmodified:   public/js/build.js[m
-	[31mmodified:   routes/profile.js[m
-	[31mmodified:   views/templates/hashtag.pug[m
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	[31mtypescript[m
-
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;davbitter@y500: ~/Documents/hva/minor_webdev/real-time-web[01;32mdavbitter@y500[00m:[01;34m~/Documents/hva/minor_webdev/real-time-web[00m$ gsrtwga 'user can now also click oon top # '
-[develop 7797575] user can now also click on top #
- 5 files changed, 124 insertions(+), 19 deletions(-)
- create mode 100644 typescript
-]0;davbitter@y500: ~/Documents/hva/minor_webdev/real-time-web[01;32mdavbitter@y500[00m:[01;34m~/Documents/hva/minor_webdev/real-time-web[00m$ gp
-Username for 'https://github.com': davebo itter
-Password for 'https://davebitter@github.com': 
-Counting objects: 13, done.
-Delta compression using up to 8 threads.
-Compressing objects:   9% (1/11)   Compressing objects:  18% (2/11)   Compressing objects:  27% (3/11)   Compressing objects:  36% (4/11)   Compressing objects:  45% (5/11)   Compressing objects:  54% (6/11)   Compressing objects:  63% (7/11)   Compressing objects:  72% (8/11)   Compressing objects:  81% (9/11)   Compressing objects:  90% (10/11)   Compressing objects: 100% (11/11)   Compressing objects: 100% (11/11), done.
-Writing objects:   7% (1/13)   Writing objects:  15% (2/13)   Writing objects:  23% (3/13)   Writing objects:  30% (4/13)   Writing objects:  38% (5/13)   Writing objects:  46% (6/13)   Writing objects:  53% (7/13)   Writing objects:  61% (8/13)   Writing objects:  69% (9/13)   Writing objects:  76% (10/13)   Writing objects:  84% (11/13)   Writing objects:  92% (12/13)   Writing objects: 100% (13/13)   Writing objects: 100% (13/13), 2.83 KiB | 0 bytes/s, done.
-Total 13 (delta 5), reused 0 (delta 0)
-remote: Resolving deltas:   0% (0/5)   [Kremote: Resolving deltas:  20% (1/5)   [Kremote: Resolving deltas:  40% (2/5)   [Kremote: Resolving deltas:  60% (3/5)   [Kremote: Resolving deltas:  80% (4/5)   [Kremote: Resolving deltas: 100% (5/5)   [Kremote: Resolving deltas: 100% (5/5), completed with 5 local objects.[K
-To https://github.com/DaveBitter/minor-webdev_real-time-web.git
-   4898c48..7797575  develop -> develop
-]0;davbitter@y500: ~/Documents/hva/minor_webdev/real-time-web[01;32mdavbitter@y500[00m:[01;34m~/Documents/hva/minor_webdev/real-time-web[00m$ gc -b 'ser[K[K[Kfeature/service-wro[K[Korke r'
-M	client/app.js
-M	public/js/build.js
-M	routes/profile.js
-Switched to a new branch 'feature/service-worker'
-]0;davbitter@y500: ~/Documents/hva/minor_webdev/real-time-web[01;32mdavbitter@y500[00m:[01;34m~/Documents/hva/minor_webdev/real-time-web[00m$ git pus --set[K[K[K[K[K[Kh --set-upstream origiin feature/service-worker 
-Total 0 (delta 0), reused 0 (delta 0)
-To https://github.com/DaveBitter/minor-webdev_real-time-web.git
- * [new branch]      feature/service-worker -> feature/service-worker
-Branch feature/service-worker set up to track remote branch feature/service-worker from origin.
-]0;davbitter@y500: ~/Documents/hva/minor_webdev/real-time-web[01;32mdavbitter@y500[00m:[01;34m~/Documents/hva/minor_webdev/real-time-web[00m$ ga[Ks
-On branch feature/service-worker
-Your branch is up-to-date with 'origin/feature/service-worker'.
-Changes not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
-
-	[31mmodified:   client/app.js[m
-	[31mdeleted:    public/css/boostrap-grid.css[m
-	[31mmodified:   public/js/build.js[m
-	[31mmodified:   routes/profile.js[m
-	[31mmodified:   views/layout.pug[m
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	[31mpublic/css/bootstrap-grid.css[m
-	[31mpublic/images/[m
-	[31mpublic/manifest.json[m
-	[31mpublic/offline/[m
-	[31mpublic/sw.js[m
-
-no changes added to commit (use "git add" and/or "git commit -a")
-]0;davbitter@y500: ~/Documents/hva/minor_webdev/real-time-web[01;32mdavbitter@y500[00m:[01;34m~/Documents/hva/minor_webdev/real-time-web[00m$ ga 'added sw a
