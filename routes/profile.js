@@ -63,6 +63,7 @@ router.get('/hashtag', (req, res) => {
 		// showing what's going on
 		console.info('Client (' + socket.id + ') connected!')
 		console.info('Total of connected clients: ' + clients.length)
+		io.emit('connected users', clients.length)
 
 		// event where user clicks on a new hashtag
 		socket.on('new tag', function(tag) {
@@ -112,6 +113,8 @@ router.get('/hashtag', (req, res) => {
 			// showing what's going on
 			console.info('Client (' + socket.id + ') disconnected!')
 			console.info('Total of connected clients: ' + clients.length)
+			io.emit('connected users', clients.length)
+
 		});
 		clients.forEach((client) => {
 			tagQueryEmit(io, client)
@@ -132,7 +135,7 @@ router.get('/hashtag', (req, res) => {
 			tags.splice(0, 10)
 
 			// check if your not re-sending the exact same data
-			if(arraysEqual(tags, queriedTags) !== true) {
+			if (arraysEqual(tags, queriedTags) !== true) {
 				io.emit('top tags', tags)
 			}
 			queriedTags = tags

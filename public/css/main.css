@@ -11,6 +11,8 @@ body {
 	background-color: #fafafa;
 	color: #666;
 	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
+	max-width: 100%;
 }
 
 header {
@@ -22,6 +24,13 @@ header {
 	background-color: #fff;
 	padding: .5em 1em;
 	border-bottom: .1em solid #eaeaea;
+}
+
+#status {
+	position: absolute;
+	top: 1em;
+	right: 3em;
+	margin: 0;
 }
 
 header+* {

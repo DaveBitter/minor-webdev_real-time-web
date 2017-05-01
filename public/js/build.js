@@ -4,7 +4,8 @@
 		taglist: document.getElementById('taglist').childNodes,
 		topTaglist: document.getElementById('topTaglist'),
 		feedtag: document.getElementById('feedtag'),
-		feed: document.getElementById('feed')
+		feed: document.getElementById('feed'),
+		status: document.getElementById('status')
 	}
 
 	var socket = io();
@@ -42,6 +43,11 @@
 
 		elements.feed.innerHTML = listElements
 		elements.feedtag.innerHTML = "#" + tag
+	})
+
+	socket.on('connected users', function(amount){
+		console.log(amount)
+		elements.status.innerText = 'users currently online: ' + amount
 	})
 
 	function sendTag(tag) {
