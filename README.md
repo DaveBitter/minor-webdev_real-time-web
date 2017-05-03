@@ -62,7 +62,7 @@ Whenever a user clicks on a hashtag the count for that hashtag goes up. Every X 
 If connection between the client and the server is lost the Service Worker kicks in. It will display a user with feedback about what possibly happened. It will also link to Instagram's hashtag search page so the user can still look at the posts for that hashtag.
 
 ### API Error Handling
-[api error handling in action](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/app_2_hero.jpg)
+![api error handling in action](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/app_2_hero.jpg)
 
 If the API throws an error the error will be handled by showing the user that something went wrong along with the statuscode.
 
