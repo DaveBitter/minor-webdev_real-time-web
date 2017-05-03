@@ -46,6 +46,20 @@
 		elements.feedtag.innerHTML = "#" + tag
 	})
 
+	socket.on('no tagstream', function(statuscode) {
+		var errorSection = document.getElementById('error')
+		var errorCode = document.getElementById('errorCode')
+
+		if (errorSection == null) {
+			elements.feed.insertAdjacentHTML('beforeend', '<section id="error" class="card"><article><p id="errorCode">We seem to be unable to connect to Instagram. We will keep retrying. Statuscode (' + statuscode + ')</p></article></section>	');
+		} else {
+			if(statuscode == 200) {
+				return errorSection.parentElement.removeChild(errorSection)
+			}
+		}
+
+	})
+
 	socket.on('connected users', function(amount) {
 		elements.status.innerText = 'users currently online: ' + amount
 	})

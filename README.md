@@ -4,7 +4,7 @@ Dave Bitter
 ![app hero](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/hero.jpg) 
 
 ## Mirror Stream
-    V 1.1.0
+    V 1.1.1
  
 ## General 
 This repository holds the code for the course 'Real-time Web', part of the minor "Webdevelopment" at the [HvA](http://www.hva.nl/) 
@@ -25,6 +25,7 @@ I highly encourage adding issues to this repo in the case of finding one. I'm al
 * [Open stream with post with the hashtag a user selects through Socket.io ](#open-stream-with-post-with-the-hashtag-a-user-selects-through-socketio)
 * [Most clicked hashtags, only sent if new information (MongoDB)](#most-clicked-hashtags-only-sent-if-new-information-mongodb)
 * [Service Worker and Progressive Web-app](service-worker-and-progressive-web-app)
+* [API Error Handling](api-error-handling)
  
 ### Instagram oAuth authentication
 ![oAuth step 1](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/oauth_0_hero.jpg)
@@ -59,6 +60,11 @@ Whenever a user clicks on a hashtag the count for that hashtag goes up. Every X 
 ![service worker in action](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/sw_0_hero.jpg)
 
 If connection between the client and the server is lost the Service Worker kicks in. It will display a user with feedback about what possibly happened. It will also link to Instagram's hashtag search page so the user can still look at the posts for that hashtag.
+
+### API Error Handling
+[api error handling in action](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/app_2_hero.jpg)
+
+If the API throws an error the error will be handled by showing the user that something went wrong along with the statuscode.
 
 ## Emitted Socket Events
 ### Server
