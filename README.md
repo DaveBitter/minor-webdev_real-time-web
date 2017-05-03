@@ -66,6 +66,10 @@ If connection between the client and the server is lost the Service Worker kicks
 
 If the API throws an error the error will be handled by showing the user that something went wrong along with the statuscode.
 
+![api down handling in action](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/app_3_hero.jpg)
+
+If the api goes down and we can do a request a page will be displayed in order with a link to the instagram search page.
+
 ## Emitted Socket Events
 ### Server
 * [```connected users (on event)```](#connected-users-on-event)
