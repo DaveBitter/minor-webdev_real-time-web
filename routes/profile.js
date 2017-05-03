@@ -126,6 +126,9 @@ router.get('/hashtag', (req, res) => {
 		});
 		clients.forEach((client) => {
 			tagQueryEmit(io, client, res)
+			tagCollection.find({}, {}).toArray(function(err, tags) {
+				io.emit('top tags', tags)
+			})
 		})
 	});
 
