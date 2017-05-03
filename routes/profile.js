@@ -117,14 +117,14 @@ router.get('/hashtag', (req, res) => {
 
 		});
 		clients.forEach((client) => {
-			tagQueryEmit(io, client)
+			tagQueryEmit(io, client, res)
 		})
 	});
 
 	// polling of media with the selected tag every X amount of seconds for each client seperatly
 	setInterval(function() {
 		clients.forEach((client) => {
-			tagQueryEmit(io, client)
+			tagQueryEmit(io, client, res)
 		})
 	}, 10000);
 
@@ -208,7 +208,7 @@ function compare(a, b) {
 }
 
 
-const tagQueryEmit = (io, client) => {
+const tagQueryEmit = (io, client, res) => {
 	// getting rid of '#' symbol
 	const queryTag = client.tag.replace('#', '')
 
@@ -218,10 +218,16 @@ const tagQueryEmit = (io, client) => {
 	// query on hashtag
 	request(tagUrl + access_token, function(err, response, body) {
 		body = JSON.parse(body)
-		const tagMedia = body.data
+		const statuscode = body.meta.code
 
-		// emmiting media to client
-		io.to(client.id).emit('new tagstream', queryTag, tagMedia);
+		if (statuscode == 200) {
+			const tagMedia = body.data
+			// emmiting media to client
+			io.to(client.id).emit('new tagstream', queryTag, tagMedia);
+		} else {
+			io.to(client.id).emit('no tagstream', statuscode);
+			
+		}
 
 	})
 }
