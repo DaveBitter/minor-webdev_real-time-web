@@ -71,6 +71,7 @@ If the API throws an error the error will be handled by showing the user that so
 * [```connected users (on event)```](#connected-users-on-event)
 * [```top tags (stream)```](#top-tags-stream)
 * [```new tagstream (stream)```](#new-tagstream-stream)
+* [```no tagstream (on event)```](#no-tagstream-on-event)
 
 #### ```connected users (on event)```
 This will emit the current amount of users that are online on the app on the event of a user that connects or disconnect.
@@ -80,6 +81,9 @@ This will emit the top clicked hashtags by users every X amount of seconds. The 
 
 #### ```new tagstream (stream)```
 This will emit the latest posts for the selected hashtag per user every X amount of seconds.
+
+#### ```no tagstream (on event)```
+This will emit the statuscod. On the client the message will be displayed at the top of the feed.
 
 ### Client
 * [```connection (on event)```](#connection-on-event)
