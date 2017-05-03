@@ -126,7 +126,7 @@ router.get('/hashtag', (req, res) => {
 		clients.forEach((client) => {
 			tagQueryEmit(io, client, res)
 		})
-	}, 10000);
+	}, 5000);
 
 	setInterval(() => {
 		tagCollection.find({}, {}).toArray(function(err, tags) {
