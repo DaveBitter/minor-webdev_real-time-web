@@ -29,14 +29,19 @@ router.get('/', (req, res) => {
 	}
 
 	request(options, function(err, response, body) {
-		if (body.code == 400) {
-			return res.redirect('/')
+		if (err !== null) {
+			res.render('templates/error')
+		} else {
+			if (body.code == 400) {
+				return res.redirect('/')
+			}
+			access_token = body.access_token
+			const user = body.user
+			res.render('templates/profile', {
+				user
+			})
 		}
-		access_token = body.access_token
-		const user = body.user
-		res.render('templates/profile', {
-			user
-		})
+
 	})
 })
 
@@ -145,21 +150,25 @@ router.get('/hashtag', (req, res) => {
 	const url = 'https://api.instagram.com/v1/users/self/media/recent/?count=10&access_token='
 
 	request(url + access_token, function(err, response, body) {
-		body = JSON.parse(body)
-		if (body.code == 429) {
-			console.error('Error (' + body.code + '): ' + body.error_type)
-			return res.redirect('/')
+		if (err !== null) {
+			res.render('templates/error')
+		} else {
+			body = JSON.parse(body)
+			if (body.code == 429) {
+				console.error('Error (' + body.code + '): ' + body.error_type)
+				return res.redirect('/')
+			}
+
+			const media = body.data
+
+			// get al list of hashtags used in the last ten posts
+			const tags = getTags(media)
+
+			res.render('templates/hashtag', {
+				media,
+				tags
+			})
 		}
-
-		const media = body.data
-
-		// get al list of hashtags used in the last ten posts
-		const tags = getTags(media)
-
-		res.render('templates/hashtag', {
-			media,
-			tags
-		})
 	})
 })
 
@@ -217,16 +226,20 @@ const tagQueryEmit = (io, client, res) => {
 
 	// query on hashtag
 	request(tagUrl + access_token, function(err, response, body) {
-		body = JSON.parse(body)
-		const statuscode = body.meta.code
-
-		if (statuscode == 200) {
-			const tagMedia = body.data
-			// emmiting media to client
-			io.to(client.id).emit('new tagstream', queryTag, tagMedia);
+		if (err !== null) {
+			res.render('templates/error')
 		} else {
-			io.to(client.id).emit('no tagstream', statuscode);
-			
+			body = JSON.parse(body)
+			const statuscode = body.meta.code
+
+			if (statuscode == 200) {
+				const tagMedia = body.data
+				// emmiting media to client
+				io.to(client.id).emit('new tagstream', queryTag, tagMedia);
+			} else {
+				io.to(client.id).emit('no tagstream', statuscode);
+
+			}
 		}
 
 	})

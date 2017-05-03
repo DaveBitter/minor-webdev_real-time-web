@@ -66,11 +66,16 @@ If connection between the client and the server is lost the Service Worker kicks
 
 If the API throws an error the error will be handled by showing the user that something went wrong along with the statuscode.
 
+![api down handling in action](https://raw.githubusercontent.com/DaveBitter/minor-webdev_real-time-web/master/screenshots/app_3_hero.jpg)
+
+If the api goes down and we can do a request a page will be displayed in order with a link to the instagram search page.
+
 ## Emitted Socket Events
 ### Server
 * [```connected users (on event)```](#connected-users-on-event)
 * [```top tags (stream)```](#top-tags-stream)
 * [```new tagstream (stream)```](#new-tagstream-stream)
+* [```no tagstream (on event)```](#no-tagstream-on-event)
 
 #### ```connected users (on event)```
 This will emit the current amount of users that are online on the app on the event of a user that connects or disconnect.
@@ -80,6 +85,9 @@ This will emit the top clicked hashtags by users every X amount of seconds. The 
 
 #### ```new tagstream (stream)```
 This will emit the latest posts for the selected hashtag per user every X amount of seconds.
+
+#### ```no tagstream (on event)```
+This will emit the statuscod. On the client the message will be displayed at the top of the feed.
 
 ### Client
 * [```connection (on event)```](#connection-on-event)
