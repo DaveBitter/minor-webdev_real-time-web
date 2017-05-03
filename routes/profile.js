@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
 		},
 		json: true
 	}
-
+	// get user profile data
 	request(options, function(err, response, body) {
 		if (err !== null) {
 			res.render('templates/error')
@@ -82,6 +82,7 @@ router.get('/hashtag', (req, res) => {
 			let updateData = {}
 			let exists = false
 
+			// update amout of times clicked on tag
 			queriedTags.map((queriedTag) => {
 				if (queriedTag.tag == tag) {
 					exists = true
@@ -90,6 +91,8 @@ router.get('/hashtag', (req, res) => {
 				}
 			})
 
+			// add tag to db if new
+			// update tag in db if not new
 			if (exists == true) {
 				tagCollection.findOne({
 					_id: updateData._id
