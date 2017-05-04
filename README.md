@@ -99,6 +99,29 @@ This will emit the new connection with the socket information (like the socket i
 #### ```new tag (on event)```
 This will emit a newly selected hashtag by the user on the client side to the server side. On the server the client's hashtag to stream posts with will be updated aswell as the 'Top Hashtags By Users'.
 
+## Tooling
+This app doesn't run on much packages. 
+* [Express (session)](#express-session)
+* [MongoDB](#mongodb)
+* [Pug](#pug)
+* [Request](#request)
+* [Socket.io](#socket.io)
+
+#### Express (session)
+Used for setting up routes and storing user data in session.
+
+#### MongoDB
+Used for storing most clicked hashtags of all clients ever connected.
+
+#### Pug
+Used for rendering front-end. I decided to use Pug beacuse of it's uncluttered syntax.
+
+#### Request
+Used for API calls to the Instagram server.
+
+#### Socket.io
+Used to setup and handle all socket connections from clients to own server.
+
 ## Live Demo 
 Taken al this in account, you can view the app [here](https://minor-webdev-real-time-web.herokuapp.com/). 
  
