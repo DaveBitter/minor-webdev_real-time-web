@@ -16,6 +16,7 @@ I highly encourage adding issues to this repo in the case of finding one. I'm al
 * [Features ](#features)
 * [Emitted Socket Events](#emitted-socket-events)
 * [Tooling](#tooling)
+* [Wishlist](#wishlist)
 * [Live Demo ](#live-demo)
 * [Getting started ](#getting-started)
 * [License ](#license)
@@ -122,6 +123,11 @@ Used for API calls to the Instagram server.
 
 #### Socket.io
 Used to setup and handle all socket connections from clients to own server.
+
+## Wishlist
+* Data visualization of events like most clicked hashtags, new clients online etc
+* Less clientside templating
+* More interaction with posts like follow the person who posted, liking, commenting etc.
 
 ## Live Demo 
 Taken al this in account, you can view the app [here](https://minor-webdev-real-time-web.herokuapp.com/). 
