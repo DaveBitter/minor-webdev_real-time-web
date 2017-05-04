@@ -7,7 +7,9 @@ Dave Bitter
     V 1.1.1
  
 ## General 
-This repository holds the code for the course 'Real-time Web', part of the minor "Webdevelopment" at the [HvA](http://www.hva.nl/) 
+This repository holds the code for the course 'Real-time Web', part of the minor "Webdevelopment" at the [HvA](http://www.hva.nl/).
+
+Mirror Stream let's user view their most used hashtags and most popular hashtags on the app. With these hashtags, streams of posts worldwide containing that hashtag can be opened.
  
 ## Issues 
 I highly encourage adding issues to this repo in the case of finding one. I'm always up for improving my code. 
