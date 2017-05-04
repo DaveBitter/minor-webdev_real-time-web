@@ -15,6 +15,7 @@ I highly encourage adding issues to this repo in the case of finding one. I'm al
 ## Table Of Contents
 * [Features ](#features)
 * [Emitted Socket Events](#emitted-socket-events)
+* [Tooling](#tooling)
 * [Live Demo ](#live-demo)
 * [Getting started ](#getting-started)
 * [License ](#license)
@@ -105,7 +106,7 @@ This app doesn't run on much packages.
 * [MongoDB](#mongodb)
 * [Pug](#pug)
 * [Request](#request)
-* [Socket.io](#socket.io)
+* [Socket.io](#socketio)
 
 #### Express (session)
 Used for setting up routes and storing user data in session.
